@@ -1,0 +1,431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+<title>Horizontal Menu Bar</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="base.css"  />
+<link rel="stylesheet" type="text/css" href="nav.css"  />
+</head>
+<body>
+
+<h1>Horizontal Menu Bar Using Style Sheets</h1>
+<p>How to construct a horizontal menu bar using <a href="http://www.w3.org/Style/CSS/">CSS</a>.</p>
+
+<h2>The HTML</h2>
+<!-- nav 1 -->
+
+<p>First we will create a div, in the body of our HTML, to hold the navigation
+  bar in and we will give it an <a href="http://www.w3.org/TR/xhtml1/#h-4.10">id</a> (<a href="http://www.devguru.com/Technologies/xhtml/quickref/xhtml_attribute_id.html">better
+  explanation of the id attribute</a>) of &#8220;nav&#8221; 
+(short for navigation). The id will allow us to easily reference to in the style
+sheet later on.</p>
+
+<code class="block">
+&hellip;&lt;body&gt;&hellip;<br />
+<span class="new">
+&lt;div id=&quot;nav&quot;&gt;<br /> 
+&nbsp;&nbsp;&nbsp;<br />
+&lt;/div&gt;</span><br />
+&hellip;&lt;/body&gt;&hellip;</code>
+
+<p>Now we are going to create an unordered list to hold the liks in. 
+One of the reasons that a list is being used is because a list is for related
+  items; 
+ each element of the list is a link to navigate around the site. 
+In the future with <a href="http://www.w3.org/TR/2002/WD-xhtml2-20020805/">XHTML
+2.0</a>, there is going to be a <a href="http://www.w3.org/TR/2002/WD-xhtml2-20021211/mod-list.html#edef_list_nl">navigation
+list</a> &#8220;&lt;nl&gt;&#8221; just for this; 
+it will also include the ablitly to easily create drop down menus.</p>
+
+<code class="block">
+&lt;div id=&quot;nav&quot;&gt;<br /> 
+&nbsp;&nbsp;&nbsp;<span class="new">&lt;ul&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/ul&gt;</span><br />
+&lt;/div&gt;</code>
+
+<p>Now for each list item (li) we are going to place one of the links we want.</p>
+
+<code class="block">
+&lt;div id=&quot;nav&quot;&gt;<br /> 
+&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<span class="new">&lt;a href=&quot;http://mywebpages.comcast.net/moronicbajebus/&quot;&gt;Sea
+Mus N Squirrel&lt;/a&gt;</span>&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;http://mywebpages.comcast.net/moronicbajebus/about/&quot;&gt;About&lt;/a&gt;&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;http://mywebpages.comcast.net/moronicbajebus/cssplay/&quot;&gt;CSS
+Play&lt;/a&gt;&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;http://mywebpages.comcast.net/moronicbajebus/rantsandlike/&quot;&gt;Rants &amp;amp;
+Like&lt;/a&gt;&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br />
+&lt;/div&gt;</code>
+
+<p>So now our HTML is done and it should look something like this:</p>
+<div id="nav1">
+	<ul>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/">Sea Mus N Squirrel</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/about/">About</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/cssplay/">CSS Play</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/rantsandlike/">Rants &amp; Like</a></li>
+	</ul>
+</div>
+<hr />
+
+
+<h2>Basic CSS</h2>
+<p>Now we will apply some CSS to the list to create the basic navigation bar.
+We will refer to the HTML elements in our CSS with the id name of the div &#8220;<code>#nav</code>&#8221; 
+followed by the the tag;
+ So when we refer to the list (ul) we will do &#8220;<code>#nav ul</code>&#8221;.  
+This way our code will be easier to read and we do not need to create a class
+for the list, list items, and links. 
+
+</p>
+
+<p>The unordered list by default in the web browser has <a href="http://www.w3.org/TR/REC-CSS1#box-properties">margins
+    and padding</a> to indent and 
+add white-space at the top and bottom of the list.
+So let us override in our stylesheet the defaults, to prevent odd problems later
+    on, with 
+&#8220;<code>padding : 0;</code>&#8221; and &#8220;<code>margin : 0;</code>&#8221; for &#8220;<code>#nav
+ul</code>&#8221;.</p>
+
+<code class="block">
+<span class="new">
+#nav ul{<br />
+&nbsp;&nbsp;&nbsp;padding : 0;
+	<br />
+&nbsp;&nbsp;&nbsp;margin : 0;<br /></span>
+}
+</code>
+<p>It should look something like this now:</p>
+<div id="navbasic1">
+	<ul>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/">Sea Mus N Squirrel</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/about/">About</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/cssplay/">CSS Play</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/rantsandlike/">Rants &amp; Like</a></li>
+	</ul>
+</div>
+<p>To get each list item on the same line we will apply &#8220;<code>display
+: inline;</code>&#8221; to &#8220;<code>#nav ul li</code>&#8221; to override
+the default value of <code>block</code>.
+The value <code>block</code> is how paragraphs (p), headers (h1 through h6),
+list (ol, ul, etc), divisions (div),  and other tags display by default; these
+elements are placed in rectangular boxes. 
+While value <code>inline</code> is how hyperlinks (a) and span display; these
+are displayed in across lines of text. 
+An inline element can appear inside of a block element. 
+</p>
+<div class="blockex">
+Block block block block block block block block block block block block block block block block block
+ block block block block block block block block block block block block block block block block
+ <span>inline inline inline inline inline inline inline inline inline inline inline inline inline
+  inline inline inline inline inline inline inline inline inline inline inline inline inline</span>
+ block block block block block block block block block block block block block block block block
+ block block block block block block block block block block block block block block block block
+</div>
+
+<p>And one last thing, to prevent the items of the list from wrapping around when the screen is to small we will
+add &#8220;<code>white-space : nowrap;</code>&#8221; to &#8220;<code>#nav ul</code>&#8221;.</p>
+
+
+<code class="block">
+#nav ul{<br />
+&nbsp;&nbsp;&nbsp;padding : 0;
+	<br />
+&nbsp;&nbsp;&nbsp;margin : 0;<br />
+&nbsp;&nbsp;&nbsp;<span class="new">white-space : nowrap;</span><br />
+}<br />
+<br />
+<span class="new">
+#nav ul li{
+	<br />
+&nbsp;&nbsp;&nbsp;display : inline;<br />
+}</span></code>
+<p>Now you should have a basic horizontal menu that should look very much like:</p>
+<div id="navbasic">
+	<ul>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/">Sea Mus N Squirrel</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/about/">About</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/cssplay/">CSS Play</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/rantsandlike/">Rants &amp; Like</a></li>
+	</ul>
+</div>
+<hr />
+<h2>Styling It</h2>
+<p>The navigation menu is now horizontal, but there is nothing to set it apart
+  from the rest of the text on a webpage making it harder to find. We will add
+  a background color of <code style="background-color: #003399; color: White;">#003399</code> (&#8220;<code>background-color:
+  #003399;</code>&#8221;)
+ and a foreground color of <code>White</code> (&#8220;<code>color: White;</code>&#8221;)
+ to our list (&#8220;<code>#nav ul</code>&#8221;).
+</p>
+<code class="block">
+#nav ul{<br />
+&nbsp;&nbsp;&nbsp;padding : 0;<br />
+&nbsp;&nbsp;&nbsp;margin : 0;<br />
+&nbsp;&nbsp;&nbsp;<span class="new">white-space : nowrap;</span><br />
+&nbsp;&nbsp;&nbsp;<span class="new">background-color : #003399;</span><br />
+	
+&nbsp;&nbsp;&nbsp;color : White;<br />
+}<br />
+<br />
+#nav ul li{<br />
+&nbsp;&nbsp;&nbsp;display : inline;<br />
+}
+
+</code>
+
+<div id="navmed1">
+	<ul>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/">Sea Mus N Squirrel</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/about/">About</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/cssplay/">CSS Play</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/rantsandlike/">Rants &amp; Like</a></li>
+	</ul>
+</div>
+<p>Notice the links are not easy to read nor do they look very navigationable.
+  We can improve this by  styling the hyperlinks themselves (&#8220;<code>#nav
+  ul li a</code>&#8221;). 
+  Make the background color <code style="background-color: #0066CC; color: White;">#0066CC</code> to
+  offset it and  a foreground color of <code>White</code>.
+   To make it look more like a button we can get rid of the underline &#8220;<code>text-decoration
+   : none;</code>&#8221;
+   and make the text bold so it will stands out more &#8220;<code>font-weight
+   : bold;</code>&#8221;.</p>
+   <code class="block">
+  #nav ul{<br />
+  &nbsp;&nbsp;&nbsp;padding : 0;<br />
+  &nbsp;&nbsp;&nbsp;margin : 0;<br />
+  &nbsp;&nbsp;&nbsp;white-space : nowrap;<br />
+  &nbsp;&nbsp;&nbsp;background-color : #003399;<br />
+  &nbsp;&nbsp;&nbsp;color : White;
+  <br />
+  }
+  <br />
+  #nav ul li{<br />
+  &nbsp;&nbsp;&nbsp;display : inline;<br />
+  }
+    <br />
+  <span class="new">#nav ul li a{<br />
+  &nbsp;&nbsp;&nbsp;background-color : #0066CC;<br />
+  &nbsp;&nbsp;&nbsp;color : White;<br />
+  &nbsp;&nbsp;&nbsp;font-weight : bold;<br />
+  &nbsp;&nbsp;&nbsp;text-decoration : none;<br />
+  }</span>
+</code>
+<div id="navmed2">
+	<ul>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/">Sea Mus N Squirrel</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/about/">About</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/cssplay/">CSS Play</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/rantsandlike/">Rants &amp; Like</a></li>
+	</ul>
+</div>
+<p>It is now getting there but there are a few things we can tweak.
+To increase the visual pleasantries of the links add <a href="http://www.htmlhelp.com/reference/css/box/padding.html">padding</a> on
+the right of one (1) <a href="http://www.htmlhelp.com/reference/css/units.html#length">em</a> 
+&#8220;<code>padding-right : 1em;</code>&#8221; and left &#8220;<code>padding-left
+: 1em;</code>&#8221;.
+Also, change the padding for the list from <code>0</code> to <code>3px</code> (&#8220;<code>padding
+: 3px;</code>&#8221;). Please note that there should be no space between the
+number and the measurement unit; correct: <code>3em</code>, incorrect: <code>3&nbsp;em</code>.</p>
+<code class="block">
+  #nav ul{<br />
+  &nbsp;&nbsp;&nbsp;<span class="new">padding : 3px;</span><br />
+  &nbsp;&nbsp;&nbsp;margin : 0;<br />
+  &nbsp;&nbsp;&nbsp;white-space : nowrap;<br />
+  &nbsp;&nbsp;&nbsp;background-color : #003399;<br />
+  &nbsp;&nbsp;&nbsp;color : White;
+  <br />
+  }
+  <br />
+  #nav ul li{<br />
+  &nbsp;&nbsp;&nbsp;display : inline;<br />
+  }
+    <br />
+  #nav ul li a{<br />
+
+  &nbsp;&nbsp;&nbsp;background-color : #0066CC;<br />
+  &nbsp;&nbsp;&nbsp;color : White;<br />
+  &nbsp;&nbsp;&nbsp;font-weight : bold;<br />
+  &nbsp;&nbsp;&nbsp;text-decoration : none;<br />
+  &nbsp;&nbsp;&nbsp;<span class="new">padding-left : 1em;</span><br />
+  &nbsp;&nbsp;&nbsp;<span class="new">padding-right : 1em;</span><br />
+  }
+</code>
+<div id="navmed3">
+	<ul>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/">Sea Mus N Squirrel</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/about/">About</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/cssplay/">CSS Play</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/rantsandlike/">Rants &amp; Like</a></li>
+	</ul>
+</div>
+<p>Now it looks like the final product but it is still missing the mouse-over
+  effect.
+To add a mouse over effect we need to use the <a href="http://www.w3.org/TR/css3-selectors/">selector</a> <code><a href="http://www.w3.org/TR/css3-selectors/#useraction-pseudos">:hover</a></code> with
+on the link;
+add a new entry in our CSS &#8220;<code>#nav ul li a:hover</code>&#8221;.
+Now any style rules we place with this will be applied when the mouse cusor is
+placed 
+over the link (<code>a</code>).
+Make the background color for it <code style="background-color: #99CCFF;;">#99CCFF;</code> and
+the foreground color
+<code style="color:  #000066;">#000066</code>.
+</p>
+ <p>
+ <code class="block">
+   #nav ul{<br />
+  &nbsp;&nbsp;&nbsp;padding : 3px;<br />
+  &nbsp;&nbsp;&nbsp;margin : 0;<br />
+  &nbsp;&nbsp;&nbsp;white-space : nowrap;<br />
+  &nbsp;&nbsp;&nbsp;background-color : #003399;<br />
+  &nbsp;&nbsp;&nbsp;color : White;
+  <br />
+  }
+  <br />
+  #nav ul li{<br />
+  &nbsp;&nbsp;&nbsp;display : inline;<br />
+  }
+    <br />
+  #nav ul li a{<br />
+
+  &nbsp;&nbsp;&nbsp;background-color : #0066CC;<br />
+  &nbsp;&nbsp;&nbsp;color : White;<br />
+  &nbsp;&nbsp;&nbsp;font-weight : bold;<br />
+  &nbsp;&nbsp;&nbsp;text-decoration : none;<br />
+  &nbsp;&nbsp;&nbsp;padding-left : 1em;<br />
+  &nbsp;&nbsp;&nbsp;padding-right : 1em;<br />
+  }<br />
+  <span class="new">
+  #navmed ul li a:hover{<br />
+	&nbsp;&nbsp;&nbsp;background-color : #99CCFF;<br />
+	&nbsp;&nbsp;&nbsp;color : #000066;<br />
+}</span>
+ 
+ </code> 
+ </p>
+
+<div id="navmed">
+	<ul>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/">Sea Mus N Squirrel</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/about/">About</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/cssplay/">CSS Play</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/rantsandlike/">Rants &amp; Like</a></li>
+	</ul>
+</div>
+<p>View an <a href="ex1.html" target="ex1htmlcssplay">example page</a> and <a href="ex1.css" target="ex1csscssplayseamus">stylesheet</a>.</p>
+<hr />
+<h2>Advance Styling</h2>
+<p>More can be done to style the menu bar.</p>
+<p><code class="block">
+#nav ul{<br />
+&nbsp;&nbsp;&nbsp;padding : 0;<br />
+&nbsp;&nbsp;&nbsp;margin : 0;<br />
+&nbsp;&nbsp;&nbsp;white-space : nowrap;<br />
+&nbsp;&nbsp;&nbsp;background-color : #003399;<br />
+&nbsp;&nbsp;&nbsp;color : White;<br />
+&nbsp;&nbsp;&nbsp;<span class="new">float : left;<br />
+&nbsp;&nbsp;&nbsp;width : 100%;<br />
+&nbsp;&nbsp;&nbsp;border-style : solid;<br />
+&nbsp;&nbsp;&nbsp;border-color : #0066CC;<br />
+&nbsp;&nbsp;&nbsp;border-width : 2px 0 2px 0;<br /></span>
+}<br />
+#nav ul li{<br />
+&nbsp;&nbsp;&nbsp;display : inline;<br />
+}<br />
+#nav ul li a{<br />
+&nbsp;&nbsp;&nbsp;padding-left : 1em;<br />
+&nbsp;&nbsp;&nbsp;padding-right : 1em;<br />
+&nbsp;&nbsp;&nbsp;background-color : #003399;<br />
+&nbsp;&nbsp;&nbsp;color : White;<br />
+&nbsp;&nbsp;&nbsp;font-weight : bold;<br />
+&nbsp;&nbsp;&nbsp;text-decoration : none;<br />
+&nbsp;&nbsp;&nbsp;<span class="new">float : left;<br />
+&nbsp;&nbsp;&nbsp;border-right-color : #0066CC;<br />
+&nbsp;&nbsp;&nbsp;border-right-style : solid;<br />
+&nbsp;&nbsp;&nbsp;border-right-width : 1px;<br /></span>
+}<br />
+#nav ul li a:hover{<br />
+&nbsp;&nbsp;&nbsp;background-color : #99CCFF;<br />
+&nbsp;&nbsp;&nbsp;color : #000066;<br />
+}</code></p>
+<div id="navadv">
+	<ul>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/">Sea Mus N Squirrel</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/about/">About</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/cssplay/">CSS Play</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/rantsandlike/">Rants &amp; Like</a></li>
+	</ul>
+</div>
+<br />
+<p>
+<code class="block">
+#nav{<br />
+  &nbsp;&nbsp;&nbsp;white-space : nowrap;<br />
+  &nbsp;&nbsp;&nbsp;background-color : #003399;<br />
+  &nbsp;&nbsp;&nbsp;float : left;<br />
+&nbsp;&nbsp;&nbsp;  color : White;<br />
+  &nbsp;&nbsp;&nbsp;width : 100%;<br />
+  &nbsp;&nbsp;&nbsp;border-style : solid;
+	<br />
+  &nbsp;&nbsp;&nbsp;border-color : #0066CC;<br />
+  &nbsp;&nbsp;&nbsp;border-width : 2px 0 2px 0;
+
+  <br />
+  }
+
+  <br />
+  #nav 
+  ul{<br />
+  &nbsp;&nbsp;&nbsp;padding : 0;<br />
+  &nbsp;&nbsp;&nbsp;margin : 0;<br />
+  &nbsp;&nbsp;&nbsp;float : right;<br />
+}<br />
+#nav ul li{<br />
+  &nbsp;&nbsp;&nbsp;display : inline;<br />
+}<br />
+#nav ul li a{<br />
+  &nbsp;&nbsp;&nbsp;padding-left : 1em;<br />
+  &nbsp;&nbsp;&nbsp;padding-right : 1em;<br />
+  &nbsp;&nbsp;&nbsp;background-color : #003399;<br />
+  &nbsp;&nbsp;&nbsp;color : White;<br />
+  &nbsp;&nbsp;&nbsp;font-weight : bold;<br />
+  &nbsp;&nbsp;&nbsp;text-decoration : none;<br />
+  &nbsp;&nbsp;&nbsp;float : left;<br />
+  &nbsp;&nbsp;&nbsp;border-right-color : #0066CC;<br />
+  &nbsp;&nbsp;&nbsp;border-right-style : solid;<br />
+  &nbsp;&nbsp;&nbsp;border-right-width : 1px;<br />
+}<br />
+#nav ul li a:hover{<br />
+  &nbsp;&nbsp;&nbsp;background-color : #99CCFF;<br />
+  &nbsp;&nbsp;&nbsp;color : #000066;<br />
+}
+
+
+</code>
+</p>
+<div id="navadvtwo">
+	<ul>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/">Sea Mus N Squirrel</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/about/">About</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/cssplay/">CSS Play</a></li>
+		<li><a href="http://mywebpages.comcast.net/moronicbajebus/rantsandlike/">Rants &amp; Like</a></li>
+	</ul>
+</div>
+<h3>More Resources</h3>
+<ul>
+	<li><a href="http://www.w3schools.com/css/css_padding.asp">W3Schools : CSS Padding</a></li>
+	<li><a href="http://www.w3schools.com/css/css_margin.asp">W3Schools : CSS Margins</a></li>
+	<li>&#8220;<a href="http://www.alistapart.com/stories/taminglists/">CSS Design Taming List</a>&#8221; from <a href="http://www.alistapart.com">A List Apart</a></li>
+	<li>&#8220;<a href="http://www.alistapart.com/stories/practicalcss/">Practical CSS Layout Tips, Tricks and Techniques</a>&#8221; from <a href="http://www.alistapart.com">A List Apart</a></li>
+	<li><a href="http://www.htmlhelp.com/reference/css/units.html">CSS Units</a> from <a href="http://www.htmlhelp.com/">WDG</a></li>
+    <li><a href="http://www.htmlhelp.com/reference/css/box/padding.html">Padding</a> from <a href="http://www.htmlhelp.com/">WDG</a></li>
+</ul>
+<p><a href="http://www.moronicbajebus.com/">&copy; 2003 Seamus P. H. Leahy</a>
+ <br/>You may take and improve upon this.
+ </p>
+</body>
+</html>

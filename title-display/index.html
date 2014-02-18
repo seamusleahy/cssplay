@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Title Block with a Shock</title>
+	<link  media="screen" rel="stylesheet" href="../../../css/css-play-template.css" />
+	<link media="screen" rel="stylesheet" href="title.css" />
+</head>
+
+<body>
+<h1>Title Block with a Shock</h1>
+<p>Now with any modern browser you can use the tags in the <code>head</code> as extra tags for display purposes&mdash;<em>I'm salivating</em>.
+But wait there's more, you can also use the <code>body</code> tag as an extra container element that resides within in the <code>html</code> tag.
+</p>
+
+<h2>Extra tags</h2>
+<p>In this example, I use the <code>title</code> tag as an extra tag set to insert the image that reads title.
+This is simple done by telling it to <code>display: block;</code> and using <a href="/playground/cssplay/image-replacement/">Image Replacement—No Span</a> to insert the image.
+</p>
+<p class="code"><span class="css-definition">head, title</span>{
+   display: block;
+}
+<span class="css-definition">title</span>{
+   height: 0;
+   padding-top: 69px;
+   overflow: hidden;
+	
+   background-image: url(graphics/title.png);
+   background-repeat: no-repeat;
+}</p>
+
+<h2>Body as a Container</h2>
+<p>By using the <code>html</code> tag to set the background for the document that frees up the <code>body</code>
+tag for other uses.</p>
+
+<p class="code"><span class="css-definition">html</span>{
+   background-color: #6999C5;
+   padding: 0;
+   margin: 0;
+}
+<span class="css-definition">body</span>{
+   padding: 0 20% 0 15%; 
+   margin: 0 10% 0 10%; 
+   border-color: #0D161F ;
+   border-width: 0 2px 0 2px;
+   border-style: solid; 
+}</p>
+<h2>Compatibility</h2>
+<p>The extra tags works with Mozilla 1.4 and Opera 7.0. Using the body as a container
+works in Mozilla 1.4, Opera 7.0, and Windows Internet Explorer 6 with some problems.</p>
+
+<h2>More Information</h2>
+<p><a href="http://www.literarymoose.info/=/css.html">CSS Destroy</a> has similar
+  example of pulling meta information from the head in <a href="http://www.literarymoose.info/=/destroy/metadatum.html">Metadatum
+  Cantabile</a>.</p>
+
+
+<hr/>
+<p>Return to <a href="../">CSS Play</a>.</p>
+
+<p><a href="http://www.moronicbajebus.com/">&copy; 2003 Seamus P. H. Leahy</a>
+ <br/>You may take and improve upon this.
+ <br/>Original: 2003.08.21, Revision: 2003.08.22
+ </p>
+</body>
+</html>

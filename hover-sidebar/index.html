@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+	<title>Sidebar Navigation</title>
+	<link rel="stylesheet" type="text/css" href="sidemenu.css" title="Fixed" />
+	
+	<link rel="alternate stylesheet" type="text/css" href="sidemenu.css" title="Absolute" />
+<link rel="alternate stylesheet" type="text/css" href="sidemenuabs.css" title="Absolute" />	
+</head>
+
+<body>
+<div id="sidebar">
+<img src="sidebarlabel.png" alt="Navigation Menu" class="label"/>
+<ul>
+	<li><a href="mail" accesskey="M"><img src="sbmail.png" alt="mail" /></a></li>
+	<li><a href="calendar" accesskey="C"><img src="sbcalendar.png" alt="calendar" /></a></li>
+	<li><a href="folder" accesskey="F"><img src="sbfolder.png" alt="folder" /></a></li>
+</ul>
+</div>
+<h1>Hover Sidebar</h1>
+<h2>What Is This About?</h2>
+<p>If you were using the web in 1995 you probably saw some <a href="http://dynamicdrive.com/dynamicindex1/davidmenu.htm">slide in sidebars</a> using javascript,
+well today you can create a very similar sidebar using just <a href="http://www.w3.org/style/CSS/">Cascading Style Sheets</a> and no javascript.
+To see it place your mouse over the blue bar on the side to see the navigation menu. </p>
+<h2>I am Not Seeing It.</h2>
+<p>It is known to work in <a href="http://www.mozilla.org">Mozilla</a> 1.3b or later (though in Mozilla 1.4a it was buggy but then was fixed) and
+it also works in <a href="http://www.opera.com">Opera</a> 7.0. But alas, it does not work in Internet Explorer 6.0 because Internet Explorer does not 
+support <a href="http://www.w3.org/TR/REC-CSS2/selector.html#dynamic-pseudo-classes"><code>:hover</code></a> on anything but hyperlinks (<code>&lt;a&gt;</code>).</p>
+
+<h2>So How Is It Done?</h2>
+<p>In the <a href="sidemenu.css">stylesheet</a>, the sidebar is positioned fixed to the side so that it will stay in the same place on the screen for the 
+viewer. 
+By default the items (<code>body #sidebar ul</code>) do not displayed (<code>display: none;</code>); 
+but when you place your mouse over the sidebar the <code>:hover</code> that is on the sidebar (<code>body #sidebar:hover ul</code>) take over
+and displays the items (<code>display: block;</code>). 
+Add a little extra styling and you got yourself a hover sidebar.</p>
+<p>Return to <a href="../">CSS Play</a>.</p>
+
+
+<p><a href="http://www.moronicbajebus.com/">&copy; 2003 Seamus P. H. Leahy</a>
+ <br/>You may take and improve upon this.
+ </p>
+
+</body>
+</html>

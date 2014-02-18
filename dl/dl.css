@@ -1,0 +1,183 @@
+/*
+dl.css
+*/
+
+dl#a{
+	width: 97%;
+	padding: 1%;
+	border-width: 1em;
+	border-style: solid;
+	border-color: #EEF3F9;
+	float: left;
+	margin-left: -1em;
+	margin-bottom: 1em;
+	
+	
+}
+dl#a dt{
+	float: left;
+	width: 30%;
+	padding: .5em 5% 1em 5%;
+	margin: 0 -1px 0 0;
+	border-right: 1px solid #A5BFD6;
+	font-weight: bold;
+	clear: left;
+
+}
+
+dl#a dd{
+	width: 50%;
+	padding: .5em 4.5% 1em 5%;
+	float: left;
+	margin: 0 ;
+	border-left: 1px #A5BFD6 solid;
+	clear: right;
+	
+}
+
+dl#a > dd + dt,
+dl#a > dd + dt + dd{
+	border-top: 1px #A5BFD6 solid;
+}
+
+
+/* B */
+dl#b{
+	width: 100%;
+	padding: 0;
+	float: left;
+	background-image: url("graphics/b-bg.png");
+	background-position: 40% 0;
+	background-repeat: repeat-y;
+	border-width: 0 1px 1px  1px;
+	border-color: #a5bfd6;
+	border-style: solid;
+
+	
+	
+}
+dl#b dt{
+	float: left;
+	width: 30%;
+	padding: .5em 5% 1em 5%;
+	margin: 0 ;
+	font-weight: bold;
+	border-top: 1px #A5BFD6 solid;
+	clear: left;
+
+}
+
+dl#b dd{
+	width: 50%;
+	padding: .5em 4.5% 1em 5%;
+	float: left;
+	margin: 0 ;
+	border-top: 1px #A5BFD6 solid;
+	
+}
+dl#b > dd{
+	padding: .5em 5% 1em 5%;
+}
+
+
+html body h3.b{
+	border-width: 1px 1px 0 1px;
+	border-color: #a5bfd6;
+	border-style: solid;
+	
+	margin: 1em 0 0 0;
+	padding: .5em 5% .5em 5% ;
+	width: 90%;
+	
+	background-image: url("graphics/b-bg.png");
+	background-position: 100% 0;
+	background-repeat: repeat-y;
+	clear: both;
+}
+
+
+
+/* C */
+dl#c{
+	width: 100%;
+	margin-bottom: 2em;
+	padding: 0;
+	float: left;
+	clear: both;
+	
+}
+dl#c dt{
+	float: left;
+	width: 160px;
+	height: 90px;
+	padding: 40px 20px 20px 20px;
+	margin: 0 -45px 0 0;
+	font-weight: bold;
+	clear: left;
+	background-image: url("graphics/c-dt.png");
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-color: transparent;
+	z-index: 5;
+	position: relative;
+	font-family:"Comic Sans MS", "Trebuchet MS", "Times New Roman", Times,  serif;
+	color: #005BA0;
+	overflow: hidden;
+
+}
+
+dl#c dt a{
+	color: #005BA0;
+	
+}
+dl#c dt:first-letter{
+	float: left;
+	font-size: 250%;
+	margin-top: -.4em;
+}
+
+dl#c dt:hover{
+	background-image: url("graphics/c-dthover.png");
+}
+dl#c dd{
+	width: 250px;
+	height: 210px;
+	padding: 40px 20px 20px 30px;
+	float: left;
+	margin: 0 ;
+	background-image: url("graphics/c-dd.png");
+	background-repeat: no-repeat;
+	background-position: 0 20px;
+	z-index: 2;
+	position: relative;
+	font-family:"Comic Sans MS", "Trebuchet MS", "Times New Roman", Times,  serif;
+	font-weight: bold;
+	color: #222600;
+	overflow: hidden;
+	
+}
+dl#c dd:hover{
+	background-image: url("graphics/c-ddhover.png");
+}
+dl#c dd:first-letter{
+	float: left;
+	font-size: 250%;
+	margin-top: -.4em;
+}
+
+
+
+html body h2.c{
+	border-width: 1px 1px 0 1px;
+	border-color: #a5bfd6;
+	border-style: solid;
+	
+	margin: 1em 0 0 0;
+	padding: .5em 5% .5em 5% ;
+	width: 90%;
+	
+	background-image: url("graphics/b-bg.png");
+	background-position: 100% 0;
+	background-repeat: repeat-y;
+}
+

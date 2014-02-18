@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+	<title>CSS Pop-Up Menus</title>
+	<link rel="stylesheet" type="text/css" href="menu-test2.css">
+		<link rel="alternate stylesheet" type="text/css" href="debug.css" title="Debug">
+</head>
+
+<body>
+<h1>Pop-Up Menus</h1>
+<p><strong>This page is still in the works.</strong></p>
+<h2>What Is This About?</h2>
+<p>The first time I came across a site that used <a href="http://dhtmlcentral.com/projects/coolmenus/?m=10">drop down navigation menus</a> I was in awe.
+Well the <a href="http://dhtmlcentral.com/projects/coolmenus/?m=10">good</a> ones where big in size and if you did not 
+have javascript you would not see the menu at all, that changed in the beginning of 2002 with Eric Meyer's <a href="http://www.meyerweb.com/eric/css/edge/menus/demo.html">Pure CSS Menus</a>.
+The Pure CSS Menus used no javascript, in old browsers you would see all the items, and in browsers that did not support the level of css you could still see the top level.
+This was all great; but I could not leave well enough alone and had to try to build one that would have the menus appear above the menu item. </p>
+<div id="bottomnav">
+<ul>
+<li><a href="../../../">Launch</a></li>
+
+<li><a href="" accesskey="http://www.google.com">Google</a>
+	<ul>
+		<li><a href="http://images.google.com">Images</a></li>
+		<li><a href="http://groups.google.com">Groups</a></li>
+		<li><a href="http://directory.google.com">Directory</a></li>
+		<li><a href="http://news.google.com">News</a></li>
+	</ul>
+
+</li>
+<li><a href="http://www.mozilla.org/">Mozilla</a>
+<ul>
+<li><a href="http://www.mozillazine.org/">MozillaZine</a> </li>
+<li><a href="http://bugzilla.mozilla.org/">Bugzilla</a></li>
+<li><a href="http://texturizer.net/firebird/">Mozilla Firebird Help</a></li>
+<li><a href="http://www.mozdev.org/">Mozdev</a></li>
+
+</ul>
+</li>
+
+<li><a href="sdf">Menu</a>
+	<ul>
+		<li><a href="#">Menu Item 1</a></li>
+		<li><a href="#">Menu Item 2</a>
+			<ul><li><a href="#">asdfasdfasdf</a></li>
+			<li><a href="#">asdfasdfasdf</a>
+				<ul><li><a href="#">kasjdfojasd</a></li></ul>
+			</li>
+			<li><a href="#">asdfasdfasdf</a></li></ul>
+		</li>
+		<li><a href="#">Menu Item 3</a></li>
+		<li><a href="#">Menu Item 4</a></li>
+	</ul>
+</li>
+</ul>
+</div>
+<h2>How?</h2>
+<p>The menu bar (#bottomnav) is positioned relative. 
+The submenus (which are nested list) are positioned absolutely with <code>bottom: 1em</code> so that
+they are offset from the bottom of #bottomnav.</p>
+<h3>bottom: 1em?</h3>
+<p>&quot;But I thought <code><a href="http://www.w3.org/TR/REC-CSS2/visuren.html#position-props">bottom</a>: 1em</code> would place it at the bottom of the screen.&quot;
+Nope, it places 1em from the bottom of the <a href="http://www.w3.org/TR/REC-CSS2/visuren.html#containing-block">containing box</a>, which is #bottomnav, because it is positioned relative, absolute, or  fixed.</p>
+<h2>A simple Example</h2>
+<p>A <a href="simple.htm">simple example</a> now exist with sub submenus.</p>
+<h2>I am Not Seeing It.</h2>
+<p>I know it works with <a href="http://www.mozilla.org">Mozilla</a> 1.4b. It does not work with <a href="http://www.opera.com">Opera</a> 7.0 and Internet Explorer 6.0.</p>
+<p>Return to <a href="../">CSS Play</a>.</p>
+<h2>Bugs</h2>
+<p>In Mozilla 1.4b, when you click on the links in the menus they become inline instead of block.</p>
+<p>Some extra text
+<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*
+<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*
+<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*
+<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*
+<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*
+<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*
+<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*
+<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*
+<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*<br/>*
+
+</p>
+
+<div id="bottomnav2">
+<ul>
+<li><a href="../../../">Launch</a></li>
+
+<li><a href="" accesskey="http://www.google.com">Google</a>
+	<ul>
+		<li><a href="http://images.google.com">Images</a></li>
+		<li><a href="http://groups.google.com">Groups</a></li>
+		<li><a href="http://directory.google.com">Directory</a></li>
+		<li><a href="http://news.google.com">News</a></li>
+	</ul>
+
+</li>
+<li><a href="http://www.mozilla.org/">Mozilla</a>
+<ul>
+<li><a href="http://www.mozillazine.org/">MozillaZine</a> </li>
+<li><a href="http://bugzilla.mozilla.org/">Bugzilla</a></li>
+<li><a href="http://texturizer.net/firebird/">Mozilla Firebird Help</a></li>
+<li><a href="http://www.mozdev.org/">Mozdev</a></li>
+
+</ul>
+</li>
+
+<li><a href="sdf">Menu</a>
+	<ul>
+		<li><a href="#">Menu Item 1</a></li>
+		<li><a href="#">Menu Item 2</a></li>
+		<li><a href="#">Menu Item 3</a></li>
+		<li><a href="#">Menu Item 4</a></li>
+	</ul>
+</li>
+</ul>
+</div>
+
+<p><a href="http://www.moronicbajebus.com/">&copy; 2003 Seamus P. H. Leahy</a>
+ <br/>You may take and improve upon this.
+ </p>
+</body>
+</html>

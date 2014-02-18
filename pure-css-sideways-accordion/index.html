@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<title>Mojebus&rsquo; Pure CSS Sideways Accordion By Seamus P. H. Leahy</title>
+
+<style>
+
+/* (1) First reset the CSS */
+/*****************
+ * CSS Reset
+ *****************/
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* (2) Include some fonts. These are the only external files used on this page. */
+
+/*
+ * I found all the fonts at FontSquirrel.com, awesome site.
+ * license: http://www.fontsquirrel.com/license/Efon
+ * license: http://www.fontsquirrel.com/license/Bebas
+ * license: http://www.fontsquirrel.com/license/League-Gothic
+ * license: http://www.fontsquirrel.com/license/WinterthurCondensed
+ */
+@font-face {
+	font-family: 'EfonRegular';
+	src: local('Efon Regular'), local('Efon'), url('Efon.ttf') format('truetype'), local('Wingdings');
+}
+
+@font-face {
+	font-family: 'BebasRegular';
+	src: local('Bebas Regular'), local('Bebas'), url('Bebas.ttf') format('truetype'), local("Arial Narrow");
+}
+
+@font-face {
+	font-family: 'WinterthurCondensedRegular';
+	src: local('WinterthurCondensed Regular'), local('WinterthurCondensed'), url('WinterthurCondensed.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'WinterthurCondensedItalic';
+	src: local('WinterthurCondensed Italic'), local('WinterthurCondensedOblique'), url('WinterthurCondensedOblique.ttf') format('truetype'), local("Arial Narrow");
+}
+
+
+
+/*******************
+ * The basic layout
+ *******************/
+html,
+body {
+  min-width: 800px;
+  
+  margin: 0;
+  padding: 0;
+  
+  background-color: #eee;
+  font-family: "BebasRegular", Consolas, Monaco, sans-serif;
+}
+
+/* (3) This will correcly add the gradient bg to the body */
+#body-wrapper {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	min-height: 800px;
+}
+
+/* (4) This crops the the accordion */
+#wrapper {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 800px;
+	min-height: 600px;
+	overflow: hidden;
+}
+
+header,
+article {
+	float: left;
+	/* (5) The bottom padding and margin create the equal columns, see: http://www.ejeliot.com/blog/61 */
+	padding-bottom: 2000px;
+	margin-bottom: -2000px;
+	position: relative;
+}
+
+/****************************************
+ * The closed state of accordion content
+ ****************************************/
+article {
+	margin-right: 50px;
+	-webkit-transition: 1s width, .5s padding-left, 3s background-color;
+	width: 125px;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgba(0,0,0,.5)),
+		color-stop(0.5, rgba(0,0,0,.5)),
+		color-stop(1, rgba(0,0,0,0))
+		);
+}
+
+article .innera {
+	overflow: hidden;
+}
+
+article .innerb {
+	position: relative;
+	left: -50px;
+	width: 180px;
+	padding: 0 10px;
+	-webkit-transition: 1s left;
+}
+
+/**************************************
+ * The expanding of the active content
+ **************************************/
+article:target {
+	width: 225px;
+}
+
+article:target .innerb {
+	left: 0;
+}
+
+
+/***********************************************
+ * Background colors for the three content bars
+ ***********************************************/
+article#about-me {
+	background-color: hsl(60, 90%, 30%);
+}
+
+article#about-me:target {
+	background-color: hsl(60, 90%, 50%);
+}
+
+article#resume {
+	background-color: hsl(34, 90%, 30%);
+}
+
+article#resume:target {
+	background-color: hsl(34, 90%, 50%);
+}
+
+article#portfolio {
+	background-color: hsl(324, 90%, 30% );
+}
+
+article#portfolio:target {
+	background-color: hsl(324, 90%, 50% );
+}
+
+
+
+/*************************************************************
+ *	White vertical bars that seperate the three content areas
+ *************************************************************/
+article:after {
+	content: "\00A0"; /* (6) Non-breaking space to force it to show */
+	width: 50px;
+	position: absolute;
+	top: 0;
+	right: -50px;
+	padding-bottom: 2000px;
+	margin-bottom: -2000px;
+}
+
+/* (7) Make the last white bar go all the way to the right, it gets cropped by #wrapper */
+article:last-child:after {
+	width: 1000px;
+	right: -1000px;
+}
+
+/* (8) The background gradient for the white background */
+#body-wrapper,
+header,
+article:after {
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, white),
+		color-stop(1, rgba(100%,100%,100%,0))
+		);
+	-webkit-background-size: 400px;
+	background-repeat: repeat-x;
+}
+
+header,
+article:after {
+  background-color: #eee;
+  -webkit-box-shadow: 0 0 20px #000;
+  z-index: 5;	
+}
+
+/**************************************** 
+ *	Header (the left most column) styles
+ ****************************************/
+header {
+	width: 90px;
+	z-index: 50;
+}
+
+header:after {
+	content: "\00A0";
+}
+
+
+/****************************
+ * Page header (Ginny Jones)
+ ****************************/
+header h1 {
+	font-weight: normal;
+	white-space: nowrap;
+	font-size: 50px;
+	
+	position: absolute;
+	top: 250px;
+	margin: 0;
+	padding: 6px 30px 6px 8px;
+	
+	color: white;
+	text-shadow: 2px 2px #444;
+	background-color: #111;
+	
+	-webkit-box-shadow: 0 0 4px rgba(0,0,0,.5);
+	
+	border-style: solid;
+	border-color: #333;
+	border-width: 1px 1px 1px 0;
+	
+	/* (9) Rotate couter-clockwise slightly */
+	-webkit-transform-origin: 0 100%;
+	-webkit-transform: rotate(-1deg);
+}
+
+/* (10) The star in the upper-right hand corner */
+header h1:before {
+	content: "*";
+	
+	display: block;
+	position: absolute;
+	z-index: -1;
+	top: -40px;
+	right: -25px;
+	
+	font-size: 200%;
+	color: #111;
+	
+	text-shadow: 0 0 4px rgba(0,0,0,.5);
+}
+
+
+
+
+/********************
+ * Navigation styles
+ ********************/
+nav {
+	position: absolute;
+	top: 88px;
+	left: 10px;
+}
+
+nav li {
+	display: block;
+	list-style-type: none;
+	
+}
+
+nav li a {
+	display: block;
+	padding: 9px;
+	float: left;
+	margin-bottom: 10px;
+	
+	background-color: rgba(17,17,17,.9);
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #222),
+		color-stop(1, rgba(17,17,17,0))
+		);
+	
+	color: #fff;
+	
+	
+	font-size: 18px;
+	text-decoration: none;
+	
+	-webkit-transform-origin: 0 100%;
+	-webkit-transform: rotate(-1deg);
+	
+	-webkit-box-shadow: 0 0 2px rgba(0,0,0,.5);
+	text-shadow: 1px 1px #444;
+	border: 1px solid rgba(255,255,255,.3);
+	
+	/* (11) Different animation time gives an interesting hover effect */
+	-webkit-transition: background-color 1s, background-image .5s;
+}
+
+/* (12) Stagger the navigation links */
+nav li:nth-child(2) a {
+	margin-left: 10px;
+}
+
+nav li:nth-child(3) a {
+	margin-left: 15px;
+}
+
+nav li a:hover {
+	background-color: hsl(174, 90%, 50% );
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, hsl(174, 90%, 50% )),
+		color-stop(1, rgba(17,17,17,0))
+		);
+	text-shadow: 3px 3px #444;
+}
+
+
+
+/************************
+ * Article heading style
+ ************************/
+article h2 {
+	font-weight: normal;
+	font-size: 40px;
+	
+	text-shadow: 2px 2px 0 rgba(50,50,50,.25);
+	
+	border-bottom: 2px solid rgba(255,255,255,.1);
+	
+	padding: 0 10px 5px 20px;
+	width: 100%;
+	margin: 15px 0 5px;
+}
+
+
+/***************************
+ *	About me content styles
+ ***************************/
+#about-me {
+	text-align: right;
+}
+
+#about-me p {
+	line-height: 24px;
+	text-indent: -57px;
+	font-family: "WinterthurCondensedRegular";
+	font-size: 18px;
+	color: #111;
+	margin: 30px 0;
+	text-shadow: 0 0 3px rgba(0,0,0,.3);
+}
+
+#about-me p:first-line {
+	color: rgba(255,255,255,.9);
+	background-color: rgba(0,0,0,.3);
+}
+
+/* (13) This creates the downward triangle below the first line */
+#about-me p:before {
+	display: block;
+	float: left;
+	padding: 0 0 0 58px;
+	height: 20px;
+	width: 20px
+	margin-right: -10px;
+	margin-top: 23px;
+	overflow: hidden;
+	
+	content: "\25BE";
+	
+	font-size: 50px;
+	letter-spacing: 0;
+	word-spacing: 0;
+	line-height: 1px;
+	vertical-align: 20px;
+	
+	color: rgba(0,0,0,.29);
+	
+	text-shadow: 0 0 0;
+	;
+
+}
+
+
+/************************
+ * Resume content styles
+ ************************/
+#experience h3 {
+	/* (14) This runs along right side: right, -webkit-transform-origin and -webkit-transform */
+	font-weight: normal;
+	font-size: 30px;
+	
+	color: hsl(24, 80%, 50%);
+	background-color: hsla(34, 50%, 15%, .9);
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,.5);
+	
+	padding: 10px;
+	position: absolute;
+	right: 0;
+	margin: 0;
+	z-index: 5;
+	
+	-webkit-transform-origin: 100% 0;
+	-webkit-transform: rotate(90deg) translateX(100%) translateY(-35px);
+	
+}
+
+#experience {
+	min-height: 200px;
+	margin-top: 20px;
+}
+
+#experience ol {
+	padding-top: 20px;
+	padding-left: 60px;
+	margin-bottom: 30px;
+}
+
+#experience ol .title {
+	font-family: "WinterthurCondensedRegular";
+}
+
+#experience .year {
+	display: block;
+	position: absolute;
+	padding: 3px;
+	width: 20px;
+	left: -45px;
+	font-size: 150%;
+	top: -3px;
+	
+	color: rgba(255,255,255,.9);
+	text-shadow: 0 0 3px rgba(0,0,0,.8);
+}
+
+#experience li {
+	margin-bottom: 25px;
+	position: relative;
+	text-shadow: 0 0 3px rgba(0,0,0,.3);
+}
+
+/* (15) The commas between list items */
+#experience li:after {
+	content: ',';
+	display: inline-block;
+	margin-top: -35px;
+	margin-left: -5px;
+	
+	color: rgba(0,0,0,.3);
+	font-size: 50px;
+}
+
+#experience li:last-child:after {
+	content: '';
+}
+
+
+#skills h3 {
+	font-weight: normal;
+	font-size: 30px;
+	text-align: right;
+	
+	color: hsl(24, 80%, 50%);
+	background-color: hsla(34, 50%, 15%, .9);
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,.5);
+	
+	padding: 10px;
+	position: absolute;
+	margin: 0;
+	
+	-webkit-transform-origin: 0 0;
+	-webkit-transform: rotate(-90deg) translateX(-100%) translateY(-10px);
+}
+
+#skills {
+	position: relative;
+	height: 200px;
+	padding-top: 30px;
+}
+
+
+#skills .group {
+	text-align: center;
+	font-family: "WinterthurCondensedRegular";
+	text-shadow: 1px 1px 0 rgba(0,0,0,.3);
+	
+	padding: 10px 5px;
+	position: absolute;
+	
+	background-color: rgba(255,255,255,.9);
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,.5);
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, rgba(0,0,0,0)),
+		color-stop(1, rgba(0,0,0,.3))
+		);
+	-webkit-background-size: 110%;
+	background-position: -2px;
+	
+	-webkit-transform: rotate(-4deg);
+	-webkit-transition: border-color 1s;
+	
+	border: solid 2px rgba(255,255,255,.2);
+
+}
+#skills .group:hover {
+	border-color: rgba(255,255,255,.75); 
+}
+
+/* (16) The circle shape is created with border-radius = width/2 */
+#skills .group li {
+	display: inline-block;
+	padding: 0 1px;
+	margin-right: 1px;
+	
+	-webkit-border-radius: 2px;
+	border: solid 1px rgba(50,50,50,.1);
+	
+	-webkit-box-shadow: 0 0 0 rgab(0,0,0,0);
+	
+	-webkit-transition: border 2s, -webkit-box-shadow 3s;
+}
+
+#skills .group li:hover {
+	border-color: rgba(50,50,50,1);
+	-webkit-box-shadow: 0 0 3px rgab(0,0,0,.5);
+}
+
+#skills-1 {
+	-webkit-border-radius: 60px;
+	width: 100px;
+	height: 90px;
+	padding: 15px 10px;
+	top: 70px;
+	left: 45px;
+}
+
+#skills-2 {
+   -webkit-border-radius: 50px;
+	width: 70px;
+	height: 60px;
+	top: 0;
+	left: 120px;
+}
+
+#skills-3 {
+   -webkit-border-radius: 30px;
+	width: 50px;
+	height: 40px;
+	top: 165px;
+	left: 132px;
+}
+
+
+
+/***************************
+ * Portfolio content styles
+ ***************************/
+
+#portfolio li {
+	font-family: "WinterthurCondensedRegular";
+	margin: 15px 30px 15px 0;
+	padding: 5px 15px 5px 5px;
+	text-align: right;
+	position: relative;
+	border-right: solid 1px rgba(0,0,0,.1);
+	min-height: 50px;
+	line-height: 120%;
+	text-shadow: 0 0 3px rgba(0,0,0,.3);
+}
+
+/* (17) The icons for each items */
+#portfolio li:before {
+	font-family: EfonRegular;
+	display: block;
+	position: absolute;
+	color: rgba(255,255,255,.8);
+	font-size: 40px;
+	right: -50px;
+	line-height: 45px;
+	vertical-align: middle;
+	text-shadow: 0 0 3px rgba(0,0,0,.7);
+}
+
+#portfolio li:nth-child(1):before {
+	content: 'l';
+}
+#portfolio li:nth-child(2):before {
+	content: 'o';
+}
+#portfolio li:nth-child(3):before {
+	content: 'v';
+}
+#portfolio li:nth-child(4):before {
+	content: 'e';
+}
+
+#portfolio ul {
+	margin-top: 50px;
+}
+
+
+/**********************
+ * Floating plus signs
+ **********************/
+.noise-1,
+.noise-2,
+.noise-3,
+.noise-4,
+.noise-5,
+.noise-6 {
+	display: block;
+	position: absolute;
+	-webkit-transition: left 2s;
+	
+	text-shadow: 0 0 5px #000;
+	z-index: 2;
+}
+
+
+.noise-1 {
+	top: 40px;
+	left: 20%;
+}
+
+.noise-1:before {
+	content: '+';
+	font-size: 30px;
+}
+
+:target .noise-1 {
+	left: 80%;
+}
+
+.noise-2 {
+	top: 400px;
+	left: 10%;
+}
+
+.noise-2:before {
+	content: '+';
+	font-size: 50px;
+}
+
+:target .noise-2 {
+	left: 50%;
+}
+
+.noise-3 {
+	top: 40px;
+	left: 50%;
+}
+
+.noise-3:before {
+	content: '+';
+	font-size: 50px;
+}
+
+:target .noise-3 {
+	left: 41%;
+}
+
+.noise-4 {
+	top: 300px;
+	left: 80%;
+}
+
+.noise-4:before {
+	content: '+';
+	font-size: 43px;
+}
+
+:target .noise-4 {
+	left: 80%;
+}
+
+.noise-5 {
+	top: 450px;
+	left: 60%;
+}
+
+.noise-5:before {
+	content: '+';
+	font-size: 60px;
+}
+
+:target .noise-5 {
+	left: 50%;
+}
+
+
+.noise-6 {
+	top: 150px;
+	left: 70%;
+}
+
+.noise-6:before {
+	content: '+';
+	font-size: 38px;
+}
+
+:target .noise-6 {
+	left: 95%;
+}
+
+/**********************
+ * Demo information bar
+ **********************/ 
+#demo-info { 
+	position: fixed;
+	z-index: 500;
+	width: 100%;
+	padding: 10px 50px;
+	bottom: 10px;
+	float: none;
+	
+	background-image: none;
+	background-color: rgba(255,255,255,.8);
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, white),
+		color-stop(1, rgba(100%,100%,100%,0))
+		);
+		
+	color: #111;
+	text-shadow: 0 0 3px rgba(255,255,255,.5);
+	word-spacing: .2em;
+	line-height: 25px;
+	vertical-align: bottom;
+	
+	-webkit-box-shadow: 0 0 7px rgba(0,0,0,.5);
+	
+	border-style: solid;
+	border-width: 3px 0;
+	border-color: hsl(324, 90%, 50% );
+
+}
+
+#demo-info h1 {
+	font-weight: normal;
+	font-size: 20px;
+	margin: 0;
+	display: inline;
+	white-space: nowrap;
+	padding-right: 1.3em;
+	color: hsl(324, 90%, 50% );
+}
+
+#demo-info h1 small {
+	color: #111;
+	font-size: 100%;
+}
+
+#demo-info p {
+	display: inline;
+	font-size: 15px;
+	
+	white-space: nowrap;
+}
+
+/* (18) The dark hover bg is created with a gradient and bg size */
+#demo-info a {
+	color: #333;
+	background-color: #fff;
+	-webkit-background-size: 100% 100%;
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #111),
+		color-stop(1, #111)
+		);
+	background-repeat: no-repeat;
+	background-position: 0 -30px;
+	padding: 3px 5px;
+	-webkit-border-radius: 3px;
+	text-decoration: none;
+	text-shadow: none;
+	margin-right: .3em;
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,.75);
+	-webkit-transition: background-position .5s, color .5s;
+}
+
+#demo-info a:hover {
+	color: white;
+	background-position: 0 0;
+}
+
+
+/*******************
+ * Fonts info links
+ *******************/
+#fonts {
+	position: absolute;
+	right: 0;
+	left: 700px;
+	text-align: right;
+	bottom: 80px;
+	padding-right: 20px;
+	white-space: nowrap;
+	min-width: 100px;
+	z-index: 5;
+	
+}
+
+#fonts h3 {
+	font-size: 10px;
+	margin-bottom: .1em;
+	border-bottom: solid 1px rgba(17,17,17,.2);
+	padding-bottom: .5em;
+	font-weight: normal;
+	color: #111;
+	word-spacing: .5em;
+	float: right;
+	opacity: .5;
+}
+
+#fonts ul {
+	clear: both;
+}
+
+#fonts a {
+	color: #111;
+	opacity: .5;
+	font-size: 13px;
+	text-decoration: none;
+	font-family: WinterthurCondensed;
+}
+
+
+#fonts a:hover {
+	opacity: .9;
+	text-shadow: 1px 1px 1px #ddd;
+}
+
+/* (19) The links changes to the font when hover */
+#fonts a[href$="Bebas"]:hover {
+	font-family: BebasRegular;
+}
+
+#fonts a[href$="Efon"]:hover {
+	font-family: EfonRegular;
+}
+
+#fonts li {
+	height: 20px;
+}
+</style>
+</head>
+<body>
+	
+	<div id="demo-info">
+		<h1>
+			<small>Mojebus&rsquo;</small>
+			Pure CSS Sideways Accordion 
+			<small>By Seamus P. H. Leahy</small>
+		</h1>
+		<p><a href="../">Learn more</a> 2010 Feb 28</p>
+	</div>
+	
+	<div id="body-wrapper">
+	<div id="wrapper">
+		<header>
+			
+			<h1>Ginny Jones</h1>
+			<nav>
+				<li><a href="#about-me">About Me</a></li>
+				<li><a href="#resume">Resume</a></li>
+				<li><a href="#portfolio">Portfolio</a></li>
+			</nav>
+		</header>
+		
+		<article id="about-me"><div class="innera">
+		<span class="noise-1"></span>
+		<span class="noise-2"></span>
+		<div class="innerb">
+			<h2>About Me</h2>
+			<p>My name is <strong class="name">Ginny Jones</strong>.
+			Fusce vel lacus velit, id ullamcorper dui.  Vestibulum id dui quis neque adipiscing pharetra ut sed augue. 
+			</p>
+			
+		</div></div></article>
+		
+		<article id="resume"><div class="innera">
+		<span class="noise-3"></span>
+		<span class="noise-4"></span>
+		<div class="innerb">
+			<h2>Resume</h2>
+			
+			<div id="experience">
+				<h3>Experience</h3>
+				<ol>
+					<li>
+						<span class="year">'06</span>
+						<span class="title">SixtySixSquares</span>
+					</li>
+					<li>
+						<span class="year">'07</span>
+						<span class="title">Acme Labs</span>
+					</li>
+					<li>
+						<span class="year">'09</span>
+						<span class="title">Rockets Triangle</span>
+					</li>
+					
+				</ol>
+			</div>
+			
+			<div id="skills">
+				<h3>Skills</h3>
+				
+				<ul class="group" id="skills-1">
+					<li>Etiam non</li>
+					<li>Ut id orci</li>
+					<li>Integer porttitor</li>
+					<li>Quisque tempus</li>
+					<li>Donec vitae</li>
+				</ul>
+				
+				<ul class="group" id="skills-2">
+					<li>MNPO 3</li>
+					<li>Ponjol</li>
+					<li>ISDD</li>
+					<li>Qim11</li>
+				</ul>
+				
+				<ul class="group" id="skills-3">
+					<li>Plod</li>
+					<li>XDD 2</li>
+				</ul>
+			</div>
+			
+		</div></div></article>
+		
+		<article id="portfolio"><div class="innera">
+			<span class="noise-5"></span>
+			<span class="noise-6"></span>
+			<div class="innerb">
+			<h2>Portfolio</h2>
+			
+			<ul>
+				<li>Vestibulum vitae orci in justo.</li>
+				<li>Vivamus tempus sapien ut metus aliquet interdum.</li>
+				<li>Nam dapibus tellus volutpat lacus auctor vestibulum.</li>
+				<li>Ut rutrum rutrum diam, id placerat odio luctus ut.</li>
+			
+			</ul>
+			
+		</div></div></article>
+	
+	</div>
+	</div>
+	
+	<div id="fonts">
+		<h3>Fonts used</h3>
+		<ul>
+			<li><a href="http://www.fontsquirrel.com/fonts/Efon">Efon</a></li>
+			<li><a href="http://www.fontsquirrel.com/fonts/Bebas">Bebas</a></li>
+			<li><a href="http://www.fontsquirrel.com/fonts/WinterthurCondensed">Winterthur Condensed</a></li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+head, title {
+		display: block;
+}
+
+title{
+	height: 0;
+	padding-top: 69px;
+	background-image: url(graphics/title.png);
+	background-repeat: no-repeat;
+	border-bottom: 2px #0D161F solid;
+	overflow: hidden;
+	margin: 0;
+}
+
+html{
+	background-color: #6999C5;
+	padding: 0;
+	margin: 0;
+}
+body{
+	padding: 0 20% 0 15%; 
+	margin: 0 10% 0 10%; 
+	border-color: #0D161F ;
+	border-width: 0 2px 0 2px;
+	border-style: solid; 
+}
+
+/* This takes care of a gap in Mozilla at the bottom of the page*/
+body > *:last-child{
+	margin-bottom: 0;
+}
+

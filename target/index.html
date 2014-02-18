@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<title>:target</title>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<style type="text/css">
+	#one, #two, #three, #four	
+	{
+		position : absolute;
+		top : 0;
+		left : 50%;
+		right: 0;
+		bottom: 0;
+	}
+	#one{z-index:4; background-color : #990000;}
+	#two{z-index:3; background-color : #FFFFCC;}
+	#three{z-index:2; background-color : #993399;}
+	#four{z-index:1; background-color : #00CCCC;}
+	
+	#two:target{z-index: 5;}
+	#three:target{z-index: 5;}
+	#four:target{z-index: 5;}
+	p{width : 45%};
+	
+	
+	</style>
+	
+</head>
+
+<body>
+<div id="nav">
+<ul>
+<li><a href="#one">One</a></li>
+<li><a href="#two">Two</a></li>
+<li><a href="#three">Three</a></li>
+<li><a href="#four">Four</a></li>
+</ul>
+</div>
+
+<div id="one"><h1>One</h1> asdfSDgfasfdg asdhgfas hgdahfh asdfh asfhashf asdfh</div>
+<div id="two"><h1>Two</h1> asdfSDgfasfdg asdhgfas hgdahfh asdfh asasdf asgasf sadg asfdhdfgasdf sdgasgd asdg
+asdf asdg afjut oyufhg dshgmhgmdhsd dsgjeythgm r sdhg rtjfj k gdkhdf gfd fhashf asdfh</div>
+<div id="three"><h1>Three</h1>  asdfSDgfasfdg asdhgfas hgdahfh asdfh asfhashf asdfh</div>
+<div id="four"><h1>Four</h1>  Moo Moooooooooooooooooooooooooooooooooooooooooo</div>
+
+<p>The tab effect is done using <a href="http://www.w3.org/TR/css3-selectors/#target-pseudo">:target</a> pseudo-class.
+The W3C&mdash;Web Style Sheets&mdash;CSS Tips &amp; Tricks has an example: <a href="http://www.w3.org/Style/Examples/007/target.html">A tabbed interface</a>;
+<a href="http://daniel.glazman.free.fr/weblog/">Glazblog</a> has another example:
+ <a href="http://daniel.glazman.free.fr/weblog/targetExample.html">CSS_only tabs, a:target demo</a>.
+</p>
+<p>
+The only brower I found to work was <a href="http://www.mozilla.org/">Mozilla</a>. Tested with Mozilla 1.3b.
+</p>
+<p><a href="../">CSS Play</a></p>
+<p><a href="http://www.moronicbajebus.com/">&copy; 2003 Seamus P. H. Leahy</a>
+ <br/>You may take and improve upon this.
+ </p>
+</body>
+</html>
+
+

@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Folder Tree List</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style>
+/* zero */
+ul.explorer1{
+	padding: 5px;
+	background-color: White;
+	margin: 0;
+	
+	
+	
+}
+ul.explorer1 ul{
+	padding: 0;
+	margin: 0 0 0 10px;
+	
+}
+ul.explorer1 li a{
+	font-family: Arial;
+	text-decoration: none;
+	color: black;
+}
+
+ul.explorer1 li a:hover{
+	color: blue;
+	text-decoration: none;
+}
+
+ul.explorer1 li{
+	list-style: none;
+	background-image: url("graphics/dotted.gif");
+	background-repeat: repeat-y;
+	padding: 2px 0 2px 20px;
+	text-indent: -19px;
+	background-position: 9px 0;
+}
+
+
+ul.explorer1 li::before{
+	content: url("graphics/bullete.gif") " ";
+}
+/* one */
+ul.explorer2{
+	padding: 5px;
+	background-color: White;
+	margin: 0;
+	
+}
+ul.explorer2 ul{
+	padding: 0;
+	margin: 0 0 0 10px;
+	
+}
+ul.explorer2 li a{
+	font-family: Arial;
+	text-decoration: none;
+	color: black;
+}
+
+ul.explorer2 li a:hover{
+	color: blue;
+	text-decoration: none;
+}
+
+ul.explorer2 li{
+	list-style: none;
+	background-image: url("graphics/dotted.gif");
+	background-repeat: repeat-y;
+	padding: 2px 0 2px 20px;
+	text-indent: -19px;
+	background-position: 9px 0;
+}
+ul.explorer2 li:last-child{
+	background-repeat: no-repeat;
+}
+
+ul.explorer2 li::before{
+	content: url("graphics/bullete.gif") " ";
+}
+
+/* two */
+ul.explorer3{
+	padding: 5px;
+	background-color: White;
+	margin: 0;
+	
+}
+ul.explorer3 ul{
+	padding: 0;
+	margin: 0 0 0 10px;
+	
+}
+
+ul.explorer3 li{
+	list-style: none;
+	
+	background-image: url("graphics/dotted.gif");
+
+	background-repeat: repeat-y;
+	padding: 2px 0 2px 20px;
+	text-indent: -19px;
+	background-position: 9px 0;
+	
+}
+
+
+
+
+ul.explorer3 li:last-child{
+	list-style: none;
+	background-image: url("graphics/dotted.gif");
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	text-indent: -19px;
+	background-position: 9px 0;
+}
+ul.explorer3 li a{
+	font-family: Arial;
+	text-decoration: none;
+	color: black;
+}
+
+ul.explorer3 li a:hover{
+	color: blue;
+	text-decoration: none;
+}
+
+ul.explorer3 li a::before{
+	content: url("graphics/folder.gif") " ";
+}
+ul.explorer3 li a:hover::before{
+	content: url("graphics/folderhover.gif") " ";
+}
+ul.explorer3 li a:only-child::before{
+	content: url("graphics/page.gif") " ";
+}
+
+ul.explorer3 li a:only-child:hover::before{
+	content: url("graphics/pagehover.gif") " ";
+}
+
+
+
+
+
+/* three */
+ul.explorer4{
+	padding: 5px;
+	background-color: White;
+	margin: 0;
+	
+}
+ul.explorer4 ul{
+	padding: 0;
+	margin: 0 0 0 10px;
+	
+}
+
+ul.explorer4 li{
+	list-style: none;
+	
+	background-image: url("graphics/dotted.gif");
+
+	background-repeat: repeat-y;
+	padding: 2px 0 2px 20px;
+	text-indent: -19px;
+	background-position: 9px 0;
+	
+}
+
+
+
+
+ul.explorer4 li:last-child{
+	list-style: none;
+	background-image: url("graphics/dotted.gif");
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	text-indent: -19px;
+	background-position: 9px 0;
+}
+ul.explorer4 li a{
+	font-family: Arial;
+	text-decoration: none;
+	color: black;
+}
+ul.explorer4 li a:hover{
+	color: blue;
+	text-decoration: none;
+}
+
+ul.explorer4 li a::before{
+	content: url("graphics/folder.gif") " ";
+}
+ul.explorer4 li a:hover::before{
+	content: url("graphics/folderhover.gif") " ";
+}
+
+ul.explorer4 li a:last-child::before{
+	content: url("graphics/page.gif") " ";
+}
+ul.explorer4 li a:last-child:hover::before{
+	content: url("graphics/pagehover.gif") " ";
+}
+
+
+</style>
+
+<link rel="stylesheet" href="/css/css-play-template.css" media="screen" />
+
+
+</head>
+
+<body>
+<h1>Folder Tree</h1>
+<p>While reading <a href="http://www.simplebits.com/archives/2003/10/19/styling_nested_lists.html">Styling Nested Lists</a> from <a href="http://www.simplebits.com/">SimpleBits</a>,
+a comment from <a href="http://gamingredients.com/">Rahul</a> jogged my memory of a nested list styled in the fashion of Windows Explorer that I  had thought about.</p>
+<h2>Unstyled</h2>
+<p>It is a nested list of links. The list are simple with the only class being on the root list.</p>
+
+<ul>
+	<li><a href="sd">liasdnfasdf</a>
+		<ul><li><a href="sd">liasdnfasdf</a></li>
+			<li><a href="sd">liasdnfasdf</a></li>
+			<li><a href="sd">liasdnfasdf</a>
+				<ul><li><a href="sd">liasdnfasdf</a></li>
+				<li><a href="sd">liasdnfasdf</a></li></ul>
+			
+			</li></ul>
+	</li>
+	<li><a href="sd">liasdnfasdf</a>
+		<ul><li><a href="asdfasdf">asdf hgasdfgasd</a></li></ul></li>
+	
+
+</ul>
+<h2>First</h2>
+<p>The first version uses a dotted background image on the <code>&lt;li&gt;</code>s to create the connection. 
+But on the last <code>&lt;li&gt;</code> it keeps going on the side.</p>
+<ul class="explorer1">
+	<li><a href="sd">liasdnfasdf</a>
+		<ul><li><a href="sd">liasdnfasdf</a></li>
+			<li><a href="sd">liasdnfasdf</a></li>
+			<li><a href="sd">liasdnfasdf</a>
+				<ul><li><a href="sd">liasdnfasdf</a></li>
+				<li><a href="sd">liasdnfasdf</a></li></ul>
+			
+			</li></ul>
+	</li>
+	<li><a href="sd">liasdnfasdf</a>
+		<ul><li><a href="asdfasdf">asdf hgasdfgasd</a></li></ul></li>
+	
+
+</ul>
+
+<h3>CSS</h3>
+<p class="code">ul.explorer1{
+	padding: 5px;
+	background-color: White;
+	margin: 0;
+}
+
+ul.explorer1 ul{
+	padding: 0;
+	margin: 0 0 0 10px;
+	
+}
+ul.explorer1 li a{
+	font-family: Arial;
+	text-decoration: none;
+	color: black;
+}
+
+ul.explorer1 li a:hover{
+	color: blue;
+}
+
+ul.explorer1 li{
+	list-style: none;
+	background-image: url("graphics/dotted.gif");
+	background-repeat: repeat-y;
+	padding: 2px 0 2px 20px;
+	text-indent: -19px;
+	background-position: 9px 0;
+}
+
+
+ul.explorer1 li::before{
+	content: url("graphics/bullete.gif") " ";
+}</p>
+<h2>Second</h2>
+<p>I want the dotted line to stop on the last one and not continue down.
+Since I want to stop the background from repeating on the last <code>&lt;li&gt;</code> in a list, 
+I use the puesdo-class :last-child to directly target it for styling.
+
+</p>
+
+}
+
+<ul class="explorer2">
+	<li><a href="sd">liasdnfasdf</a>
+		<ul><li><a href="sd">liasdnfasdf</a></li>
+			<li><a href="sd">liasdnfasdf</a></li>
+			<li><a href="sd">liasdnfasdf</a>
+				<ul><li><a href="sd">liasdnfasdf</a></li>
+				<li><a href="sd">liasdnfasdf</a></li></ul>
+			
+			</li></ul>
+	</li>
+	<li><a href="sd">liasdnfasdf</a>
+		<ul><li><a href="asdfasdf">asdf hgasdfgasd</a></li></ul></li>
+</ul>
+<h3>CSS</h3>
+<p class="code">&hellip;
+ul.explorer2 li{
+	list-style: none;
+	background-image: url("graphics/dotted.gif");
+	background-repeat: repeat-y;
+	padding: 2px 0 2px 20px;
+	text-indent: -19px;
+	background-position: 9px 0;
+}
+ul.explorer2 li:last-child{
+	background-repeat: no-repeat;
+}
+</p>
+<h2>Third</h2>
+<p>Now I want to add folder next to the links that have children and page icons
+  next to those that have no children. The links that are will have the page
+  icon have no siblings. 
+The links with the folder icon will have a sibling that is the nest list (<code>&lt;ul&gt;</code>).
+So I will style the links by default to have a folder icon and then to style
+those that have no sibling I will use <code>:only-child</code>. 
+
+</p>
+
+
+
+<ul class="explorer3">
+	<li><a href="sd">liasdnfasdf</a>
+		<ul><li><a href="sd">liasdnfasdf</a></li>
+			<li><a href="sd">liasdnfasdf</a></li>
+			<li><a href="sd">liasdnfasdf</a>
+				<ul><li><a href="sd">liasdnfasdf</a></li>
+				<li><a href="sd">liasdnfasdf</a></li></ul>
+			
+			</li></ul>
+	</li>
+	<li><a href="sd">liasdnfasdf</a>
+		<ul><li><a href="asdfasdf">asdf hgasdfgasd</a></li></ul></li>
+	
+
+</ul>
+<h3>CSS</h3>
+<p class="code">ul.explorer3 li a::before{
+	content: url("graphics/folder.gif") " ";
+}
+
+ul.explorer3 li a:only-child::before{
+	content: url("graphics/page.gif") " ";
+}</p>
+<h2>Fourth</h2>
+<p>The example above does not work as of today (October 20, 2003) in Mozilla.
+The links that have should have the folder icon have a <code>&lt;ul&gt;</code> as there next sibling.
+While those that should have a page icon, they have no next sibling.
+So instead of using <code>:only-child</code>, I can use <code>:last-child</code> 
+</p>
+<ul class="explorer4">
+	<li><a href="sd">liasdnfasdf</a>
+		<ul><li><a href="sd">liasdnfasdf</a></li>
+			<li><a href="sd">liasdnfasdf</a></li>
+			<li><a href="sd">liasdnfasdf</a>
+				<ul><li><a href="sd">liasdnfasdf</a></li>
+				<li><a href="sd">liasdnfasdf</a></li></ul>
+			
+			</li></ul>
+	</li>
+	<li><a href="sd">liasdnfasdf</a>
+		<ul><li><a href="asdfasdf">asdf hgasdfgasd</a></li></ul></li>
+	
+
+</ul>
+<h3>CSS</h3>
+<p class="code">ul.explorer4 li a::before{
+	content: url("graphics/folder.gif") " ";
+}
+
+ul.explorer4 li a:last-child::before{
+	content: url("graphics/page.gif") " ";
+}</p>
+<hr>
+<p>Return to <a href="../">CSS Play</a>.</p>
+
+<p><a href="http://www.moronicbajebus.com/">© 2003 Seamus P. H. Leahy</a>
+ <br>You may take and improve upon this.
+ <br>Original: 2003.10.20
+ </p>
+</body>
+</html>

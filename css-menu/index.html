@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+<title>Css Menus</title>
+<link rel="stylesheet" type="text/css" href="focus-menu.css">
+</head>
+
+<body>
+<h1>CSS Menu&mdash;Click version</h1>
+<ul id="menu">
+	<li>Home</li>
+	<li>Menu Two
+		<ul><li><a href="#">Link 1</a></li>
+		<li><a href="#">Link 2</a></li>
+		<li><a href="#">Link 3</a></li>
+		<li><a href="#">Link 4</a></li></ul>
+	</li>
+	<li >Superfluous
+		<ul><li><a href="#">Water</a></li>
+		<li><a href="#">Why?</a></li>
+		<li><a href="#">Extra</a></li>
+		<li><a href="#">Over Flowing</a></li></ul>
+	</li>
+	<li><a href="#ketchup">My Ketchup Bottle</a>
+		<ul><li>&quot;No. It's not blood&quot;</li>
+		<li>&quot;We've cleared up any unsaid problems&quot;</li>
+		<li>&quot;Who knew worms tasted so fine.&quot;</li>
+		</ul>
+	</li>
+	
+</ul>
+<hr>
+<p>The stylesheet is <a href="focus-menu.css">focus-menu.css</a>.</p>
+<p>This is menu is based on <a href="http://www.meyerweb.com/eric/css/edge/menus/demo.html">&quot;Pure CSS menus&quot;</a>;
+but instead of using :hover to show the sub menus, this uses :active. The sub menu&mdash;which is a list&mdash; uses the :hover to 
+keep it showing after the user releases the mouse button. There is 1.5em padding for the top and -1.5em margin for the top
+ to try to overlap the area of the sub menu so the :hover will take effect immediately (hopefully). But if you click then unclick without moving
+ the mouse, the sub menu hides. If you click&mdash;then move your mouse&mdash;and then release, the sub menu still shows.</p>
+ <p>I tested the page in Mozilla 1.2 beta.</p>
+
+<p><a href="http://www.moronicbajebus.com/">&copy; 2003 Seamus P. H. Leahy</a>
+ <br/>You may take and improve upon this.
+ </p>
+
+</body>
+</html>
+

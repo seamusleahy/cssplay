@@ -1,0 +1,147 @@
+/*
+© 2003 Seamus P. H. Leahy
+You may take and improve upon this.
+*/
+
+/* The example of the styled table*/
+
+body table#extable3,
+body table#extable3 tbody{
+	display: block;
+	width: 100%;
+	float: left;
+	
+}
+body table#extable3 tbody tr{
+	display: block;
+	
+	width: 152px;
+	padding: 5px;
+	margin: 2px;
+	height: 95px;
+	
+	float: left;
+	
+	
+	border-width: 1px;
+	border-style: solid;
+	border-color: #2B5074;
+	
+	color: #0D161F;
+	background-color: #F1F5FA;
+	
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+body table#extable3 thead{
+	display: none;
+}
+
+body table#extable3 tr > *{
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+/* I am using the :first-child as a way to style each column by itself*/
+/* First column */
+body table#extable3 tr td:first-child{
+	height: 20px;
+	display: block;
+	width: 100%;
+		
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 90%;
+	font-weight: bold;
+	
+
+	
+}
+
+/* Second column */
+body table#extable3 tr td:first-child + td{ 
+	border-color: #2B5074;  
+	border-style: solid;  
+	border-width: 1px; 
+}
+
+body table#extable3 tr td:first-child + td img{
+	display: block;
+}
+
+/* Third column */
+body table#extable3 tr td:first-child + td + td,
+body table#extable3 tr td:first-child + td + td + td,
+body table#extable3 tr td:first-child + td + td + td + td,
+body table#extable3 tr td:first-child + td + td + td + td + td
+{
+	display: none;
+}
+body table#extable3 tr:hover td:first-child + td + td,
+body table#extable3 tr:hover td:first-child + td + td + td,
+body table#extable3 tr:hover td:first-child + td + td + td + td,
+body table#extable3 tr:hover td:first-child + td + td + td + td + td{
+	display: block;
+	position: relative;
+	z-index: 100;
+	top: -60px;
+	left: 10px;
+	background-color: #F2F1FA;
+	font-size: 90%;
+	width: 120%;
+	padding: 0 5px 0 5px;
+	border-color: #2B2C74;
+	border-style: solid;
+}
+
+body table#extable3 tr:hover td:first-child + td + td{
+	border-width: 1px 1px 0 1px;
+	font-size: 80%;
+	font-weight: bold;
+}
+body table#extable3 tr:hover td:first-child + td + td:before{
+	content: "Author: ";
+}
+body table#extable3 tr:hover td:first-child + td + td + td{
+	border-width: 0 1px 0 1px;
+	font-size: 80%;
+	font-weight: bold;
+}
+body table#extable3 tr:hover td:first-child + td +td + td:before{
+	content: "Version: ";
+}
+body table#extable3 tr:hover td:first-child + td + td + td + td{
+	border-width: 0 1px 0 1px;
+	font-size: 80%;
+	font-weight: bold;
+}
+body table#extable3 tr:hover td:first-child + td + td + td + td:before{
+	content: "Date: ";
+}
+body table#extable3 tr:hover td:first-child + td + td + td + td + td{
+	border-width: 0 1px 1px 1px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-style: italic;
+	
+}
+
+
+
+
+
+
+
+
+/* Hover state*/
+body table#extable3 tbody tr:hover{
+	border-color: #2B2C74;
+	background-color: #F2F1FA;
+	border-width: 2px;
+	margin: 1px;
+}
+
+
+

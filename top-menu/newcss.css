@@ -1,0 +1,192 @@
+body{
+	margin: 30px 30px 0 30px ;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: .9em;
+	background-color: #FBFCFD;
+	background-image: url(graphics/bg.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+/* navigation menu */
+body #nav{
+	position: fixed;
+	left: 0;
+	top: 14px;
+	width: 75px;
+	height: 9px;
+	background-image: url(graphics/menulabelnormal.png); /* Menu label */
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	z-index: 1000;
+}
+body #nav:hover{
+	width: 100%; /* note change in width*/
+	height: 43px;
+	background-position: left bottom;
+	background-image: url(graphics/menulabelhover.png);
+}
+
+body #nav:hover ul{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 9px;
+	/*background-color: #AFAFC0;*/
+	background-image: url(graphics/ulbg.png);
+	border-bottom: 2px solid #636384;
+	padding: 0 0 0 8px;
+	margin: 0;
+	height: 32px;
+
+	
+}
+
+body #nav ul{
+	display: none;
+}
+
+body #nav ul li{
+	float: left;
+	width: 32px;
+	height: 32px;
+	list-style: none;
+	margin: 0 1px 0 0;
+}
+body #nav ul li a span{
+	display: none;
+}
+
+/* The links */
+body #nav ul li a{
+	background-image: url(graphics/button.png);
+	text-decoration: none;
+	display: block;
+	width: 32px;
+	height: 32px;
+}
+
+body #nav ul li a:hover{
+	background-image: url(graphics/button48.png);
+	position: relative;
+	left: -8px;
+	top: -8px;
+	width: 48px;
+	height: 48px;	
+}
+
+/* the button images */
+body #nav ul li a[href="/"]{
+	background-image: url(graphics/home.png);
+}
+body #nav ul li a[href="/"]:hover{
+	background-image: url(graphics/home48.png);
+}
+body #nav ul li a[href="new/"]{
+	background-image: url(graphics/new.png);
+}
+body #nav ul li a[href="new/"]:hover{
+	background-image: url(graphics/new48.png);
+}
+body #nav ul li a[href="edit/"]{
+	background-image: url(graphics/edit.png);
+}
+body #nav ul li a[href="edit/"]:hover{
+	background-image: url(graphics/edit48.png);
+}
+body #nav ul li a[href="manage/"]{
+	background-image: url(graphics/manage.png);
+}
+body #nav ul li a[href="manage/"]:hover{
+	background-image: url(graphics/manage48.png);
+}
+body #nav ul li a[href="logout/"]{
+	background-image: url(graphics/logout.png);
+}
+body #nav ul li a[href="logout/"]:hover{
+	background-image: url(graphics/logout48.png);
+}
+
+
+
+/* The popup text*/
+body #nav ul li a:hover span{
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 10px;
+ color: #39426B;
+ float: left;
+ display: block;
+ font-weight: bold;
+ position: relative;
+ left: 30px;
+ top: 30px;
+ background-image: url(graphics/hovertitlebg.png);
+ padding: 1px;
+ border: 1px solid;
+ 	
+}
+
+
+
+
+
+/* the header */
+
+body h1{
+	font-size: 10px;
+	color: White;
+	font-weight: bold;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0;
+	background-color: #373A62;
+	text-align: center;
+	padding: 1px 15px 1px 15px;
+	background-image: url(graphics/h1bg.gif);
+	background-position: bottom;
+	background-repeat: repeat-x;
+}
+
+
+/* Main */
+body #main{
+	margin: 1em 30% 1em 15%;
+}
+
+body #main a:link{
+	color: #3366CC;
+}
+body #main a:link:hover{
+	color: #33CCFF;
+}
+body #main a:visited{
+	color: #4D33CC;
+}
+body #main a:visited:hover{
+	color: #9933CC;
+}
+body #main p.code{
+	font-family: "Courier New", Courier, monospace;
+	white-space: pre;
+	border: 1px solid #F0F0F0;
+	color: #333333;
+	padding: .5em;
+}
+
+body #main h2{
+	margin-bottom: 0;
+	font-size: 110%;
+}
+body #main h2 + *{
+	margin-top: 0;
+}
+
+
+

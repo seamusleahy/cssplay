@@ -1,0 +1,157 @@
+/*File: nav.css
+ Created By: Seamus P. H. Leahy
+*/
+
+#navbasic ul{
+	padding : 0;
+	margin : 0;
+	white-space : nowrap;
+}
+#navbasic ul li{
+	display : inline;
+}
+
+
+#navbasic1 ul{
+	padding : 0;
+	margin : 0;
+}
+
+/* meduim */
+#navmed ul{
+	padding : 3px;
+	margin : 0;
+	white-space : nowrap;
+	background-color : #003399;
+	color : White;
+}
+#navmed ul li{
+	display : inline;
+}
+#navmed ul li a{
+	padding-left : 1em;
+	padding-right : 1em;
+	background-color : #0066CC;
+	color : White;
+	font-weight : bold;
+	text-decoration : none;
+}
+#navmed ul li a:hover{
+	background-color : #99CCFF;
+	color : #000066;
+}
+
+#navmed1 ul{
+	padding : 0;
+	margin : 0;
+	white-space : nowrap;
+	background-color : #003399;
+	color : White;
+}
+#navmed1 ul li{
+	display : inline;
+}
+
+#navmed2 ul{
+	padding : 0;
+	margin : 0;
+	white-space : nowrap;
+	background-color : #003399;
+	color : White;
+}
+#navmed2 ul li{
+	display : inline;
+}
+#navmed2 ul li a{
+	background-color : #0066CC;
+	color : White;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+#navmed3 ul{
+	padding : 3px;
+	margin : 0;
+	white-space : nowrap;
+	background-color : #003399;
+	color : White;
+}
+#navmed3 ul li{
+	display : inline;
+}
+#navmed3 ul li a{
+	padding-left : 1em;
+	padding-right : 1em;
+	background-color : #0066CC;
+	color : White;
+	font-weight : bold;
+	text-decoration : none;
+}
+/* advance*/
+#navadv ul{
+	padding : 0;
+	margin : 0;
+	white-space : nowrap;
+	background-color : #003399;
+	color : White;
+	float : left;
+	width : 100%;
+	border-style : solid;
+	border-color : #0066CC;
+	border-width : 2px 0 2px 0;
+}
+#navadv ul li{
+	display : inline;
+}
+#navadv ul li a{
+	padding-left : 1em;
+	padding-right : 1em;
+	background-color : #003399;
+	color : White;
+	font-weight : bold;
+	text-decoration : none;
+	float : left;
+	border-right-color : #0066CC;
+	border-right-style : solid;
+	border-right-width : 1px;
+}
+#navadv ul li a:hover{
+	background-color : #99CCFF;
+	color : #000066;
+}
+#navadvtwo{
+	white-space : nowrap;
+	background-color : #003399;
+	float : left;
+	color : White;
+	width : 100%;
+	border-style : solid;
+	border-color : #0066CC;
+	border-width : 2px 0 2px 0;
+
+}
+
+#navadvtwo ul{
+	padding : 0;
+	margin : 0;
+	float : right;
+}
+#navadvtwo ul li{
+	display : inline;
+}
+#navadvtwo ul li a{
+	padding-left : 1em;
+	padding-right : 1em;
+	background-color : #003399;
+	color : White;
+	font-weight : bold;
+	text-decoration : none;
+	float : left;
+	border-right-color : #0066CC;
+	border-right-style : solid;
+	border-right-width : 1px;
+}
+#navadvtwo ul li a:hover{
+	background-color : #99CCFF;
+	color : #000066;
+}

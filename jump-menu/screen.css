@@ -1,0 +1,318 @@
+/* StyleSheet for the Jump Menu example.
+ * Seamus P. H. Leahy
+ * Freely use and improve upon.
+ **/
+
+/* Base code for the jump menu*/
+.jumpMenu{
+	position: relative; /* needed */
+		
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+   width: 124px;
+}
+.jumpMenu:hover{
+	z-index: 10; /* place it over top of the surronding text */
+}
+/* The label of the jump menu */
+.jumpMenu .label{
+	width: 124px;
+	height: 14px;		
+	display: block;	
+	position: relative;
+	z-index: 2; /* key so that the links can hide underneath it */
+	
+	text-align: center;
+	cursor: default; /* The pointer cursor gives a better ui feel, I think */
+	color: Black;
+	background-color: #bbb; 
+
+}
+.jumpMenu:hover .label{
+	background-color: #eee;
+	color: Black;
+}
+.jumpMenu ul{
+	margin: 0;
+	padding: 0;
+	height: 0;
+	position: absolute;
+}
+.jumpMenu ul li{	
+	list-style: none;	
+	display: inline;
+	
+}
+.jumpMenu ul a{
+
+	display: block;	
+	text-decoration: none;
+	
+
+	background-image: none;
+	width: 124px;
+	height: 14px;
+	
+	/* Make it small and place underneath the label which
+	 * hides the links but allows them to gotten to by tabbing */
+	margin-top: -10px;
+	position: absolute;
+	height: 0;	
+	overflow: hidden;
+	
+	color:  black;
+	background-color: #eee;
+	
+}
+.jumpMenu ul a:hover{
+	background-color: #000066;
+	color: White;
+}
+.jumpMenu:hover ul a,
+.jumpMenu ul a:focus
+{
+   margin-top: 0;
+	height: 14px;
+	visibility: visible;
+	position: static;
+	overflow: visible;
+	z-index: 3;
+}
+
+	
+/* The second example with additional decoration */
+
+#second.jumpMenu{
+	position: relative;
+	float: left;
+	width: 144px;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#second.jumpMenu .label{
+	width: 120px;
+	height: 16px;		
+
+	padding: 7px 12px;
+	text-align: center;
+	color: Black;
+	background-color: transparent; 
+	background-image: url(graphics/aLabel.gif);
+
+}
+#second.jumpMenu:hover .label{
+	background-image: url(graphics/aLabelHover.gif);
+}
+
+
+#second.jumpMenu ul a{
+
+	width: 117px;	
+	color:  #2E450F;
+	background-color: #A8FF38;
+	
+}
+
+#second.jumpMenu ul a:hover{
+	background-color: #FBFFF4;
+	color: Black;
+}
+
+#second.jumpMenu:hover ul a,
+#second.jumpMenu ul a:focus
+{
+   margin-left: 5px;
+	height: 14px;
+	padding: 4px 5px 4px 10px;
+
+	
+	border-style: solid;
+	border-color: #00FF00;
+	border-width: 0 1px 1px 1px;
+	
+}
+
+/* The third example and most crazy */
+#third.jumpMenu {
+	position: relative;
+	margin-left: 20px;
+}
+#third.jumpMenu .label{
+	width: 127px;
+	height: 35px;
+	
+	/* a bit of image replacement */
+	overflow: hidden;
+	text-indent: -9000px;
+	background-image: url(graphics/third/jumpmenuButton.png);
+	background-color: transparent;
+} 
+#third.jumpMenu:hover ul{
+	background-image: url(graphics/third/hoverBg.png);
+	background-repeat: no-repeat;
+	width: 135px;
+	height: 236px;
+	position: absolute;
+	left: 10px;
+	top: 2px;
+	
+}
+
+#third.jumpMenu:hover ul a[href="http://moronicbajebus.com/"]{
+	background-color: transparent;
+	position: absolute;
+	z-index: 2;
+	width: 88px;
+	height: 31px;
+	text-indent: -9000px;
+	background-image: url(graphics/third/launch.png);
+	top: 89px;
+	left: 42px;
+}
+
+#third.jumpMenu:hover ul a[href="http://moronicbajebus.com/"]:hover,
+#third.jumpMenu:hover ul a[href="http://moronicbajebus.com/"]:focus{
+	background-image: url(graphics/third/launchHover.png);
+}
+
+#third.jumpMenu ul a[href="http://moronicbajebus.com/"]:focus{
+	background-color: transparent;
+	position: absolute;
+	z-index: 2;
+	width: 88px;
+	height: 31px;
+	text-indent: -9000px;
+	background-image: url(graphics/third/launchHover.png);
+}
+
+#third.jumpMenu:hover ul a[href="http://moronicbajebus.com/site/"],
+#third.jumpMenu:hover ul a[href="http://moronicbajebus.com/site/"]:focus{
+	background-color: transparent;
+	position: absolute;
+	z-index: 2;
+	width: 52px;
+	height: 36px;
+	text-indent: -9000px;
+	background-image: url(graphics/third/site.png);
+	top: 209px;
+	left: 72px;
+}
+
+#third.jumpMenu:hover ul a[href="http://moronicbajebus.com/site/"]:hover,
+#third.jumpMenu:hover ul a[href="http://moronicbajebus.com/site/"]:focus{
+	background-image: url(graphics/third/siteHover.png);
+}
+
+#third.jumpMenu ul a[href="http://moronicbajebus.com/site/"]:focus{
+	background-color: transparent;
+	position: absolute;
+	z-index: 2;
+	width: 52px;
+	height: 36px;
+	text-indent: -9000px;
+	background-image: url(graphics/third/siteHover.png);
+
+}
+
+#third.jumpMenu:hover ul a[href="http://moronicbajebus.com/playground/"]{
+	background-color: transparent;
+	position: absolute;
+	z-index: 2;
+	width: 179px;
+	height: 47px;
+	text-indent: -9000px;
+	background-image: url(graphics/third/playground.png);
+	top: 119px;
+	left: -27px;
+}
+
+#third.jumpMenu:hover ul a[href="http://moronicbajebus.com/playground/"]:hover{
+	background-image: url(graphics/third/playgroundHover.png);
+}
+#third.jumpMenu ul a[href="http://moronicbajebus.com/playground/"]:focus{
+	background-color: transparent;
+	position: absolute;
+	z-index: 2;
+	width: 179px;
+	height: 47px;
+	text-indent: -9000px;
+	background-image: url(graphics/third/playgroundHover.png);
+
+}
+
+#third.jumpMenu:hover ul a[href="http://moronicbajebus.com/about/"]{
+	background-color: transparent;
+	position: absolute;
+	z-index: 2;
+	width: 81px;
+	height: 37px;
+	text-indent: -9000px;
+	background-image: url(graphics/third/about.png);
+	top: 47px;
+	left: 62px;
+}
+
+#third.jumpMenu:hover ul a[href="http://moronicbajebus.com/about/"]:hover{
+	background-image: url(graphics/third/aboutHover.png);
+}
+#third.jumpMenu ul a[href="http://moronicbajebus.com/about/"]:focus{
+	background-color: transparent;
+	position: absolute;
+	z-index: 2;
+	width: 81px;
+	height: 37px;
+	text-indent: -9000px;
+	background-image: url(graphics/third/aboutHover.png);
+	
+}
+#third.jumpMenu:hover ul a[href="http://moronicbajebus.com/rant/"]{
+	background-color: transparent;
+	position: absolute;
+	z-index: 2;
+	width: 114px;
+	height: 38px;
+	text-indent: -9000px;
+	background-image: url(graphics/third/rant.png);
+	top: 177px;
+	left: 30px;
+}
+
+#third.jumpMenu:hover ul a[href="http://moronicbajebus.com/rant/"]:hover{
+	background-image: url(graphics/third/rantHover.png);
+}
+#third.jumpMenu ul a[href="http://moronicbajebus.com/rant/"]:focus{
+	background-color: transparent;
+	position: absolute;
+	z-index: 2;
+	width: 114px;
+	height: 38px;
+	text-indent: -9000px;
+	background-image: url(graphics/third/rantHover.png);
+
+}
+
+
+
+
+/* Page style */
+body{
+	background-color: #FFE3FD;
+	margin: 1em 10em 2em 7em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+body p{
+	line-height: 125%;
+}
+
+body h1{
+	font-weight: normal;
+	margin: 1em 0 0 0;
+	color: #1B001E;
+	text-align: center;
+	margin-right: 1.5em;
+}
+
+

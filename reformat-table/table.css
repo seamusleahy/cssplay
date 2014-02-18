@@ -1,0 +1,142 @@
+/*
+© 2003 Seamus P. H. Leahy
+You may take and improve upon this.
+*/
+
+/* The example of the styled table*/
+
+body table#extable1,
+body table#extable1 tbody{
+	display: block;
+	width: 100%;
+	float: left;
+	
+}
+body table#extable1 tbody tr{
+	display: block;
+	
+	width: 400px;
+	padding: 5px 5px 5px 5px;
+	margin: 2px 100% 5px 0;
+	
+	float: left;
+	
+	
+	border-width: 1px 3px 3px 1px;
+	border-style: solid;
+	border-color: #2B5074;
+	
+	color: #0D161F;
+	background-color: #F1F5FA;
+	
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body table#extable1 thead{
+	display: none;
+}
+
+body table#extable1 tr > *{
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+/* I am using the :first-child as a way to style each column by itself*/
+/* First column */
+body table#extable1 tr td:first-child{
+	height: 1em;
+	padding: 0 .5em 0 .5em;
+	margin-bottom: 5px;
+	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 130%;
+	letter-spacing: .1em;
+	
+	border-width: 1px 2px 2px 1px;
+	border-color: #2B5074;
+	border-style: solid;
+	
+	color: #0D161F;
+	background-color: #D4E1EE;
+}
+
+/* Second column */
+body table#extable1 tr td:first-child + td{ 
+	border-color: #2B5074;  
+	border-style: solid;  
+	border-width: 1px; 
+	
+	float: left;
+	margin: 0 10px 10px 0;
+}
+
+body table#extable1 tr td:first-child + td img{
+	display: block;
+}
+
+/* Third column */
+body table#extable1 tr td:first-child + td + td{
+	font-size: 90%;
+	font-weight: bold;
+}
+
+body table#extable1 tr td:first-child + td + td:before{
+	content: "Author: ";
+	font-style: italic;
+	font-size: 90%;
+}
+
+/* Fourth column */
+body table#extable1 tr td:first-child + td + td + td{
+	font-size: 80%;
+}
+body table#extable1 tr td:first-child + td + td + td:before{
+	content: "Version: ";
+	font-style: italic;
+}
+
+/* Fifth column */
+body table#extable1 tr td:first-child + td + td + td + td{
+	font-size: 80%;
+}
+body table#extable1 tr td:first-child + td + td + td + td:before{
+	content: "Date: ";
+	font-style: italic;
+}
+body table#extable1 tr td:first-child + td + td + td + td .year:after,
+body table#extable1 tr td:first-child + td + td + td + td .month:after{
+	content: " - ";
+}
+
+/* Sixth column */
+body table#extable1 tr td:first-child + td + td + td + td + td{
+	font-size: 90%;
+	clear: both;
+	padding: 0 5% 0 5%;
+	line-height: 130%;
+}
+
+/* Hover state*/
+body table#extable1 tbody tr:hover{
+	border-color: #2B2C74;
+	background-color: #F2F1FA;
+}
+body table#extable1 tr:hover td:first-child{
+	border-color: #2B2C74;
+	color: #0D0D1F;
+	background-color: #D4D5EE;
+}
+
+
+/* The first table example */
+body table#extable2{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body table#extable2 tr > *{
+	border-style: solid;
+	border-width: 1px;
+	
+}

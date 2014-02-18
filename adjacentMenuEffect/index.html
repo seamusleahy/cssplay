@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<title>Adjacent Menu Effect</title>
+	<link rel="stylesheet" type="text/css" href="screen.css" />
+	<link rel="stylesheet" type="text/css" href="../../../css/css-play-template.css"/>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+</head>
+
+<body> 
+<h1>Adjacent Combinator Menu Effect</h1>
+<p>
+This is an examples of the <a href="http://www.w3.org/TR/css3-selectors/#adjacent-i-combinators">indirect adjacent</a> 
+and <a href="http://www.w3.org/TR/css3-selectors/#adjacent-d-combinators">direct adjacent selector</a> along with the 
+hover selector. The results should be that when you hover your mouse over a link in the menu bar the open end of all
+the link dividers will face the current link.<br />
+<img src="example.png" alt="example of the effect." /></p>
+
+
+<h2 class="code">HTML Code</h2>
+<p class="code">&lt;ul&gt;
+	&lt;li class="end"&gt;&lt;img src="leftendall.png" alt="end" /&gt;&lt;/li&gt;
+	
+	&lt;li&gt;&lt;a href="../../"&gt;launch&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="../"&gt;css play&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="../../about/"&gt;about&lt;/a&gt;&lt;/li&gt;
+	
+	&lt;li class="end"&gt;&lt;img src="rightendall.png" alt="end" /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</p>
+<hr />
+<h2 class="example">Indirect '~'</h2>
+<div id="indirect">
+
+	<ul>
+		<li class="end"><img src="leftendall.png" alt="" /></li>
+		<li><a href="../../">launch</a></li>
+		<li><a href="../">css play</a></li>
+		<li><a href="../../about/">about</a></li>
+		<li class="end"><img src="rightendall.png" alt="" /></li>
+	</ul>
+</div>
+
+<h3 class="code">CSS Indirect Code</h3>
+<p class="code">body #indirect ul li:hover ~  li
+{
+	background-image : url(rightend.png);
+}</p>
+<hr />
+
+
+<h2 class="example">Direct '+' </h2>
+<div id="direct">
+
+	<ul>
+		<li class="end"><img src="leftendall.png" alt="" /></li>
+		<li><a href="../../">launch</a></li>
+		<li><a href="../">css play</a></li>
+		<li><a href="../../about/">about</a></li>
+		<li class="end"><img src="rightendall.png" alt="" /></li>
+	</ul>
+</div>
+<h3 class="code">CSS Direct Code</h3>
+<p class="code">body #direct ul li:hover +  li,
+body #direct ul li:hover +  li + li{
+	background-image : url(rightend.png);
+}</p>
+<hr />
+
+<h2>Problems</h2>
+<p>No browser works with the indirect method as of March 14, 2003. <a href="http://www.mozilla.org">Mozilla 1.3</a> sort of
+ works with the direct mehtod. </p>
+ <hr/>
+ <p>Return to <a href="../">CSS Play</a>.</p>
+<p><a href="http://www.moronicbajebus.com/">&copy; 2003 Seamus P. H. Leahy</a>
+ <br/>You may take and improve upon this.
+ </p>
+
+
+</body>
+</html>
+

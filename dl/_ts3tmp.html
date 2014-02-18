@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Sensually Styled Definition Lists</title>
+	<link rel="stylesheet" href="../../../css/css-play-template.css" />
+	<link rel="stylesheet" href="dl.css" />
+</head>
+
+<body>
+	<h1>Sensually Styled Definition Lists</h1>
+	<p>Thoughts, have been shimmering in my head since the middle of the year 2003 when discussion on the <a href="http://www.css-discuss.org/">CSS-Discuss</a> about styling definition list (<code>&lt;dl&gt;</code>), on ways I could style a definition list.
+	I have come up with three examples using a portion of the list of <a href="../">CSS Play</a> examples. The first two are styled in much the manner of a table with the definition title being the left column and the definition comprising the left column and the third is a more whimsical style.</p>
+	
+
+	<h2>Unstyled Example</h2>
+	<dl>
+<dt><a href="/playground/cssplay/explorer-list/">Folder Tree List</a></dt>
+<dd>Nested lists styled to look like a folder tree.</dd>
+
+
+<dt><a href="/playground/cssplay/drop-down-llama-menu/">Drop Down Llama Menu</a></dt>
+<dd>A drop down menu that is triggered by hovering over a drop down marker instead of hovering over the menu label.</dd>
+
+<dt><a href="/playground/cssplay/title-display/">Title Block with a Shock</a></dt>
+<dd>The use of the title tag as an extra blank tag set and the body tag as an extra container.</dd>
+
+
+<dt><a href="/playground/cssplay/reformat-table/">Reformat the Table</a></dt>
+<dd>Use a table for its data structure but display in a non-table format.</dd>
+
+<dt><a href="/playground/cssplay/image-replacement/">Image Replacement—No Span</a></dt>
+<dd>This example is based on the <a href="http://www.stopdesign.com/articles/css/replace-text/">Background-Image to Replace Text</a> method; but now with no extra span. </dd>
+
+
+<dt><a href="/playground/cssplay/top-menu/">Combination of CSS Tricks for a Menu</a></dt>
+<dd>A menu that uses for different CSS tricks to create a dynamic menu.</dd>
+
+<dt><a href="/playground/cssplay/equalcolumn/">Multiple  Columns of Equal Length</a>
+</dt>
+<dd>A three column layout with the columns of equal length.</dd>
+
+	<dt><a href="/playground/cssplay/enlarger-button-menu/">Enlarger Button Menu</a></dt>
+	<dd>An example of a menu using icon that each icon will grow larger when hovering over it.</dd>
+
+	<dt><a href="/playground/cssplay/markyourjump/">Mark Your Jump</a></dt>
+	<dd>Show users where they jumped in a page.</dd>
+	
+	<dt><a href="/playground/cssplay/pop-up-menus">CSS Pop-Up Menus</a></dt>
+	<dd>CSS based menus that pop-up instead of down.</dd>
+
+
+	</dd>
+
+</dl>
+	
+	<h2>Example One</h2>
+	<p>This first example is suppose to look like a two column table. 
+	Both the <code>dd</code> and the <code>dt</code> float to the left with an assigned width. 
+	The <code>dt</code> clears the left side to prevent it from wrapping around.</p>
+	
+	<p class="code"><span class="css-definition">dl</span>{
+	float: left; 
+	
+	width: 97%; 
+	padding: 1%;
+	margin-left: -1em; <span class="comment">/*Push it over to the left.*/</span> 
+	margin-bottom: 1em;
+	
+	<span class="comment">/*Matt Effect*/</span> 
+	border-width: 1em; 
+	border-style: solid; 
+	border-color: #EEF3F9; 
+	
+	
+} 
+<span class="css-definition">dl dt</span>{ 
+	float: left; 
+	clear: left; 
+	width: 30%; 
+	
+	padding: .5em 5% 1em 5%; 
+	<span class="comment">/*The -1px on the right margin pulls 
+	the dd over top of it by 1px.*/</span> 
+	<span class="comment">/*The Overlap is because they
+	 both create the middle border and 
+	by overlapping them it does not matter
+	 if the dt or the dd are longer.*/</span> 
+	margin: 0 -1px 0 0; 	
+	border-right: 1px solid #A5BFD6; 
+	
+	font-weight: bold; 
+	
+} 
+<span class="css-definition">dl dd</span>{ 
+	width: 50%; 
+	padding: .5em 4.5% 1em 5%; 
+	float: left; 
+	margin: 0 ; 
+	border-left: 1px #A5BFD6 solid; 
+	clear: right; <span class="comment">/*Forces the dd to break to the next line.*/</span>
+} 
+<span class="comment">/*Creates the horizontal border between each *row*.*/</span>
+<span class="css-definition">dl> dd + dt,
+dl > dd + dt + dd</span>{
+	border-top: 1px #A5BFD6 solid;
+}</p>
+	<dl id="a">
+<dt><a href="/playground/cssplay/explorer-list/">Folder Tree List</a></dt>
+<dd>Nested lists styled to look like a folder tree.</dd>
+
+
+<dt><a href="/playground/cssplay/drop-down-llama-menu/">Drop Down Llama Menu</a></dt>
+<dd>A drop down menu that is triggered by hovering over a drop down marker instead of hovering over the menu label.</dd>
+
+<dt><a href="/playground/cssplay/title-display/">Title Block with a Shock</a></dt>
+<dd>The use of the title tag as an extra blank tag set and the body tag as an extra container.</dd>
+
+
+<dt><a href="/playground/cssplay/reformat-table/">Reformat the Table</a></dt>
+<dd>Use a table for its data structure but display in a non-table format.</dd>
+
+<dt><a href="/playground/cssplay/image-replacement/">Image Replacement—No Span</a></dt>
+<dd>This example is based on the <a href="http://www.stopdesign.com/articles/css/replace-text/">Background-Image to Replace Text</a> method; but now with no extra span. </dd>
+
+
+<dt><a href="/playground/cssplay/top-menu/">Combination of CSS Tricks for a Menu</a></dt>
+<dd>A menu that uses for different CSS tricks to create a dynamic menu.</dd>
+
+<dt><a href="/playground/cssplay/equalcolumn/">Multiple  Columns of Equal Length</a>
+</dt>
+<dd>A three column layout with the columns of equal length.</dd>
+
+	<dt><a href="/playground/cssplay/enlarger-button-menu/">Enlarger Button Menu</a></dt>
+	<dd>An example of a menu using icon that each icon will grow larger when hovering over it.</dd>
+
+	<dt><a href="/playground/cssplay/markyourjump/">Mark Your Jump</a></dt>
+	<dd>Show users where they jumped in a page.</dd>
+	
+	<dt><a href="/playground/cssplay/pop-up-menus">CSS Pop-Up Menus</a></dt>
+	<dd>CSS based menus that pop-up instead of down.</dd>
+
+
+	</dd>
+
+</dl>
+	
+	<h2>Example Two</h2>
+	<p>The second example is another table inspired looked. 
+	This time I used a background image to create the <a href="http://moronicbajebus.com/playground/cssplay/twocolumns/">column effect</a>.
+	Since the "columns" are fluid (40%, 60%), then <a href="http://www.w3.org/TR/REC-CSS2/colors.html#propdef-background-position">the left 40%</a> needs to be the background for the left column and the remaining part is the background for the right column.  </p>
+		
+	<h3 class="b">Example Two</h3>
+		<dl id="b">
+<dt><a href="/playground/cssplay/explorer-list/">Folder Tree List</a></dt>
+<dd>Nested lists styled to look like a folder tree.</dd>
+
+
+<dt><a href="/playground/cssplay/drop-down-llama-menu/">Drop Down Llama Menu</a></dt>
+<dd>A drop down menu that is triggered by hovering over a drop down marker instead of hovering over the menu label.</dd>
+
+<dt><a href="/playground/cssplay/title-display/">Title Block with a Shock</a></dt>
+<dd>The use of the title tag as an extra blank tag set and the body tag as an extra container.</dd>
+
+
+<dt><a href="/playground/cssplay/reformat-table/">Reformat the Table</a></dt>
+<dd>Use a table for its data structure but display in a non-table format.</dd>
+
+<dt><a href="/playground/cssplay/image-replacement/">Image Replacement—No Span</a></dt>
+<dd>This example is based on the <a href="http://www.stopdesign.com/articles/css/replace-text/">Background-Image to Replace Text</a> method; but now with no extra span. </dd>
+
+
+<dt><a href="/playground/cssplay/top-menu/">Combination of CSS Tricks for a Menu</a></dt>
+<dd>A menu that uses for different CSS tricks to create a dynamic menu.</dd>
+
+<dt><a href="/playground/cssplay/equalcolumn/">Multiple  Columns of Equal Length</a>
+</dt>
+<dd>A three column layout with the columns of equal length.</dd>
+
+	<dt><a href="/playground/cssplay/enlarger-button-menu/">Enlarger Button Menu</a></dt>
+	<dd>An example of a menu using icon that each icon will grow larger when hovering over it.</dd>
+
+	<dt><a href="/playground/cssplay/markyourjump/">Mark Your Jump</a></dt>
+	<dd>Show users where they jumped in a page.</dd>
+	
+	<dt><a href="/playground/cssplay/pop-up-menus">CSS Pop-Up Menus</a></dt>
+	<dd>CSS based menus that pop-up instead of down.</dd>
+
+
+	</dd>
+</dl>
+	
+	<h2>Example Three</h2>
+	<p>The third example is a more whimsical look for the definition list.</p>
+	<dl id="c">
+<dt><a href="/playground/cssplay/explorer-list/">Folder Tree List</a></dt>
+<dd>Nested lists styled to look like a folder tree.</dd>
+
+
+<dt><a href="/playground/cssplay/drop-down-llama-menu/">Drop Down Llama Menu</a></dt>
+<dd>A drop down menu that is triggered by hovering over a drop down marker instead of hovering over the menu label.</dd>
+
+<dt><a href="/playground/cssplay/title-display/">Title Block with a Shock</a></dt>
+<dd>The use of the title tag as an extra blank tag set and the body tag as an extra container.</dd>
+
+
+<dt><a href="/playground/cssplay/reformat-table/">Reformat the Table</a></dt>
+<dd>Use a table for its data structure but display in a non-table format.</dd>
+
+<dt><a href="/playground/cssplay/image-replacement/">Image Replacement—No Span</a></dt>
+<dd>This example is based on the <a href="http://www.stopdesign.com/articles/css/replace-text/">Background-Image to Replace Text</a> method; but now with no extra span. </dd>
+
+
+<dt><a href="/playground/cssplay/top-menu/">Combination of CSS Tricks for a Menu</a></dt>
+<dd>A menu that uses for different CSS tricks to create a dynamic menu.</dd>
+
+<dt><a href="/playground/cssplay/equalcolumn/">Multiple  Columns of Equal Length</a>
+</dt>
+<dd>A three column layout with the columns of equal length.</dd>
+
+	<dt><a href="/playground/cssplay/enlarger-button-menu/">Enlarger Button Menu</a></dt>
+	<dd>An example of a menu using icon that each icon will grow larger when hovering over it.</dd>
+
+	<dt><a href="/playground/cssplay/markyourjump/">Mark Your Jump</a></dt>
+	<dd>Show users where they jumped in a page.</dd>
+	
+	<dt><a href="/playground/cssplay/pop-up-menus">CSS Pop-Up Menus</a></dt>
+	<dd>CSS based menus that pop-up instead of down.</dd>
+
+
+	</dd>
+
+</dl>
+<p>The <acronym title="Cascading StyleSheet">CSS</acronym> (<a href="dl.css">dl.css</a>) for all the examples.</p>
+<hr/>
+<p>Return to <a href="../">CSS Play</a>.</p>
+<p><a href="http://www.moronicbajebus.com/">© 2004 Seamus P. H. Leahy</a>
+ <br>You may take and improve upon this.
+ </p>
+
+
+
+
+</body>
+</html>

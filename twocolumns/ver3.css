@@ -1,0 +1,24 @@
+/* File: ver3.css
+	Created By: Seamus P. H. Leahy
+	http://mywebpages.comcast.net/moronicbajebus/
+ */
+/*fluid, static*/
+body #holder{
+	background-image : url(bg2.png);
+	background-position : right;
+	background-repeat : repeat-y;
+	float : left;
+	width: 100%;
+}
+
+body #holder #sidebar{
+	float : right;
+	
+}
+
+body #holder #content{
+	float: none;
+	margin: 0 250px 0 auto;
+	padding: 0 5% 0 10%;
+
+}

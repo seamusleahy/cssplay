@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+	
+
+<title>Hierarchical dynamic menu with CSS</title><style type="text/css">
+
+	#menu {
+		position: relative;
+		list-style-type:none;
+		margin:1em 0 2em 0; padding:0;
+		width:100%; height:1.4em;
+		font:100%/1 sans-serif;
+		}
+	.menuitem {
+		position:absolute; top:10px;
+		margin:0; padding:0;
+		width:10em; height:1.4em;
+		overflow:hidden;
+		}
+	#mi01 { left:0 }
+	#mi02 { left:10em }
+	#mi03 { left:20em }
+
+	.menuitem ul {
+		display:block;
+		margin: 0; padding:0;
+		list-style-type:none;
+
+		
+		
+		}
+	.menuitem li { margin:0; padding:0 }
+	.submenu li { position:relative }
+
+	/* 2-class selector to have higher weight than ".menuitem ul" */
+	.submenu .subsubmenu {
+		position:absolute; top:0; left:10em;
+		width:10em;
+		display:none;
+		}
+
+	.menuitem:hover {
+		height:10em;
+		overflow:visible;
+		}
+	.submenu li:hover > .subsubmenu {
+		display:block;
+		}
+
+	#menu a {
+		display:block;
+		margin:0; padding: .2em .3em;
+		text-align:center;
+		text-decoration:none;
+		color:white;
+		border-top:1px solid white;
+		border-left:1px solid white;
+		}
+	#menu a:hover { background:black }
+	.menuitem a { background:red }
+	.menuitem ul a { background:green }
+	.menuitem ul ul a { background:blue }
+	.menuitem ul ul ul a { background:violet }
+	.menuitem ul ul ul ul a { background:orange }
+	
+	#content{
+		float: left;
+		width: 80%;
+		margin-left: 10%;
+		
+	}
+
+</style></head>
+
+<body>
+
+<h1>Hierarchical dynamic menu with CSS</h1>
+
+<p>
+The menu is made by several nested UL lists. Only (X)HTML and CSS are used for it, no scripts are needed.<br>
+<strong>Warning: it doesn't work in MS Internet Explorer (yet?).</strong>
+</p>
+
+<hr/>
+<div id="content">
+<p> The menu consists of three different parts: First level LIs are
+formated horizontaly as absolutely positioned blocks, they are always
+visible. Their parent UL is formated as single line, 1.2em hight; the
+em-unit is good, for we can set its exact height depending on actual
+font size (LI heights and paddings are set by ems, too). All &lt;A&gt;
+elemements are formated as blocks to fit all menu item's width. </p>
+
+<p> The second-level ULs are verticaly oriented, each bellow its parent
+LI. They aren't positioned at all, they just flow under top-level menu
+items. They are hidden due to LIs height and overflow:hidden. In CSS, I
+set for these LIs:hover higher height and overflow:visible - this makes
+the nested UL visible until we move out of the (now larger) top-level
+LI's box. </p>
+
+<p> The third-level ULs are absolutely positioned next to their parent
+LI, having display:none. The trigger is on their parent LI:hover - it
+sets them display:block. These 3rd-level ULs may be repeated as may
+times as we need (the behaviour above 3rd level stays the same). Just
+look at items 1.2, 1.2.2, and 1.2.2.2 to see the formating. </p>
+
+<ul id="menu">
+
+	<li class="menuitem" id="mi01"><a href="#">Item 1</a>
+	<ul class="submenu">
+		<li><a href="#">Subitem 1.1</a></li>
+		<li><a href="#">Subitem 1.2</a>
+		<ul class="subsubmenu">
+			<li><a href="#">Subitem 1.2.1</a></li>
+			<li><a href="#">Subitem 1.2.2</a>
+			<ul class="subsubmenu">
+				<li><a href="#">Subitem 1.2.2.1</a></li>
+				<li><a href="#">Subitem 1.2.2.2</a>
+				<ul class="subsubmenu">
+					<li><a href="#">Subitem 1.2.2.2.1</a></li>
+					<li><a href="#">Subitem 1.2.2.2.2</a></li>
+					<li><a href="#">Subitem 1.2.2.2.3</a></li>
+					<li><a href="#">Subitem 1.2.2.2.4</a></li>
+				</ul></li>
+				<li><a href="#">Subitem 1.2.2.3</a></li>
+				<li><a href="#">Subitem 1.2.2.4</a></li>
+			</ul></li>
+			<li><a href="#">Subitem 1.2.3</a></li>
+			<li><a href="#">Subitem 1.2.4</a></li>
+		</ul></li>
+		<li><a href="#">Subitem 1.3</a></li>
+		<li><a href="#">Subitem 1.4</a></li>
+	</ul></li>
+	<li class="menuitem" id="mi02"><a href="#">Item 2</a>
+	<ul class="submenu">
+		<li><a href="#">Subitem 2.1</a></li>
+		<li><a href="#">Subitem 2.2</a></li>
+		<li><a href="#">Subitem 2.3</a></li>
+	</ul></li>
+	<li class="menuitem" id="mi03"><a href="#">Item 3</a>
+	<ul class="submenu">
+		<li><a href="#">Subitem 3.1</a></li>
+		<li><a href="#">Subitem 3.2</a></li>
+		<li><a href="#">Subitem 3.3</a></li>
+		<li><a href="#">Subitem 3.4</a></li>
+	</ul></li>
+
+</ul>
+
+<p> The style is made to put the menu anywhere in the document's normal
+flow, even it can be positioned. Due to sizes beeing set strictly by
+em-units, any font-resize is possible without breaking the menu
+(actually, it resizes with the font size). Try smaller/larger font size
+in this document.<br>
+See the code for details (CSS is part of this document).
+</p>
+
+<p>
+Correct links should be set on every &lt;a href&gt; (on each level) to be sure every user can use the navigation.
+</p>
+
+<h2>Why not MSIE?</h2>
+
+<p> This construction works in Gecko-based browsers (tested in Mozilla,
+Camino), in Opera 7, and Safari (maybe Konqueror, too?). Microsoft
+decided to implement the :hover pseudo-class for A elements only.
+That's the reason the menu won't work in any IE browser (there is
+missing the LI:hover trigger to start the action). However, some
+Javascript (hopefuly a simple one) may be added to allow this menu in
+IE as well. Maybe I'll publish it here later... </p>
+</div>
+
+
+<p>
+<a href="mailto:pixy@pixy.cz">Petr Stanicek</a> [aka -pixy-] - (c) 2003-05-16, 15:00
+</p>
+
+</body></html>

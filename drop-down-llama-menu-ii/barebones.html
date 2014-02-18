@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Drop Down Llama Menu II Barebones</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style>
+
+/* the menu code*/
+/*
+ * I tried to break the CSS code into core styling and decorative trim
+ * for the Drop Down Llama menus.
+ */
+
+
+/*
+ * Core Styling
+ */	
+ 
+/*
+ * The top level item container for the top level link and the optional submenu
+ */ 
+ul#navigation > li{
+	   /* undo the default settings */
+	   margin: 0;
+		padding: 0;
+		list-style: none;
+		display: block;
+		
+		
+		float: left;
+		width: 130px;
+		/* The height of the button */
+		height: 1.5em;  
+		
+		/* needed to position the submenu with regards to this*/
+		position: relative; 
+}
+	
+
+/*
+ * The submenu (container of the submenu items) in it's closed state
+ */	
+ul#navigation > li > ul{
+	   /* undo the default settings*/
+      margin: 0;
+		padding: 0;
+		
+		/* size of the dropdown glyph */
+		width: 17px;
+		height: 20px;
+		
+		/* positioning with respect to it's parent (#navigation > li) */
+		position: absolute;		
+		/* right and top of the li not the page */
+		right: 0px;
+		top: 0px;
+		
+		/* layer it on top */
+		z-index: 50;
+
+      /* see the decorative trim to set the dropdown glyph*/	
+}
+	
+/*
+ * The submenu (container of the submenu items) in it's open state.
+ * This just increases the widht of the submenu to the widht of the 
+ * submenu items.
+ */
+ul#navigation > li > ul:hover{	
+	   /* The width of the submenu */
+		width: 117px; 
+}
+	
+/*
+ * The submenu items in when the submenu is closed.
+ * This hides the submenu items.
+ */	
+ul#navigation li ul  li{
+	   /* hide the submenu */
+	   display: none;
+} 
+	
+
+/*
+ * The submenu items when the submenu is open.
+ * This shows the submenu items.
+ */	
+ul#navigation  > li > ul:hover > li{
+	   /* show the submenu */		
+		display: block;
+		
+		width: 117px;
+		/* IE6 places gaps between the list items to over come this
+		   I pull the items together by 1px so that they are butting 
+			in IE6 and for the other's they overlap by 1px. */
+		padding: 1px 0 0 0;
+		margin: 0 0 -1px 0; 			
+}
+	
+	
+/*
+ * The first submenu item.
+ * This pushes down the submenu so it is not over top
+ * of the top level item.
+ */	
+ul#navigation > li > ul:hover > li:first-child{
+	   /* needed to push down all the list items, else
+		   they would start at the top edge of the top level */
+	   margin-top: 18px;		
+}
+	
+	
+	
+	
+	
+	
+/*
+* Decorative trim
+*/ 
+	
+/*
+ * The container for the top level items.
+ * This can be used to create a 'menu bar' for the top level items to sit upon.
+ */ 
+ul#navigation{
+	   /* to undo the default settings */
+	   margin: 0;
+		padding: 0;
+		
+		
+		/* Since the li are floating, they will pop out of the ul#navigation.
+		   This is not good if you plan on using the this for decoration 
+			purpouses. The first way about this is to mimic that that the li's
+			did not pop out with height: */
+		height: 1.5em;
+		/* Or, the other option is to actually prevent it from popping out 
+		   with:
+		
+		float: left;
+		width: 100%;		
+		*/
+		
+		
+		/* decorative trim */
+		background-color: #CCCCCC;	
+		
+		
+		/* suggested but not needed in the bare bones version:
+		position: relative; */
+}	
+
+
+/*
+ * The top level item which contains the top level link and the
+ * optional submenu.
+ */
+#navigation > li {
+	
+}
+
+
+/*
+ * The decorative trim for the link that shows on the top level (not submenu links)
+*/
+#navigation > li > a{
+	background-color: #999999;
+} 
+
+
+/*
+* The decorative trim for the link when the user
+* hover's over the link or it's submenu
+*/
+#navigation > li:hover > a{	 
+	   background-color: #FFFFCC;		
+}
+
+	
+/*
+* The decorative trim for the link when the user
+* hover's over the link.
+* Needs to be after '#navigation > li:hover > a'
+* to take prescendents.
+* Hmmm, IE6 doesn't seem to like this.
+*/
+#navigation > li > a:hover{
+	    
+	 	 color: Red;
+}
+	 
+
+/* 
+ * The submenu container.
+ * The decorative trim of the submenu when the li is 
+ * being hovered. This can be used to change the 
+ * dropdown glyph when the top-level link is being
+ * hovered but not the submenu.
+ */  
+ul#navigation > li > ul{
+		/* the dropdown glyph */
+		background-image: url("graphics/dropdown.gif");
+		background-position: 100% 0;
+		background-repeat: no-repeat;	
+
+	
+	}
+
+
+/*
+ * The submenu container when in the open state.
+ * This is good for changing the dropdown glyph 
+ * for the open state.
+ */ 	
+ul#navigation > li > ul:hover{		
+
+	   background-image: url("graphics/dropdownhover.gif");
+	}
+
+/*
+ * The submen item 
+ */
+ul#navigation > li > ul > li{
+	
+}
+
+/*
+ * The decorative trim for the last item in a submenu.
+ * This is good to add a cap to the end of the submenu
+ */
+ul#navigation > li > ul:hover > li.last-child{
+		/* decorative trim*/		
+}	
+
+/*
+ * The decorative trim for when the last item in a submenu
+ * is being hovered.
+ * This is good to make the end cap for the submenu match
+ * the hover state of the link.
+ */
+ul#navigation > li > ul > li.last-child:hover{
+	  	
+}
+	
+/*
+ * The subment item link
+ */
+ul#navigation >  li >  ul > li > a{	
+		display: block;	
+		
+		/* decorative trim */
+		background-color: #CCCC33;
+}	
+	
+/*
+ * The decorative trim for the submenu items links
+ * when you hover over it.
+ */
+ul#navigation  > li > ul > li > a:hover ,
+ul#navigation  > li > ul > li:hover > a{
+		background-color: #336600;
+}
+
+</style>
+
+
+<!-- compliance patch for microsoft browsers -->
+<!--[if lt IE 7]>
+<script src="ie7/ie7-standard-p.js" type="text/javascript">
+</script>
+<![endif]-->
+
+
+</head>
+
+<body>
+<h1>Drop Down Llama Menu II Barebones</h1>
+<ul id="navigation">
+	<li ><a href="/" accesskey="L">Launch</a></li>
+		<li ><a href="/about/" accesskey="A">About</a>		
+		<!-- added no spaces in between tags-->
+			<ul><li><a href="/about/index.php#seamus">Seamus</a></li><li><a href="http://portfolio.moronicbajebus.com/" accesskey="F">Portfolio</a></li><li class="last-child"><a href="/about/resume/" accesskey="N">Resume</a></li></ul>
+		</li>
+		<li ><a href="/playground/" accesskey="P">playground</a>
+			<ul><li><a href="/playground/cssplay/" >Cssplay</a></li><li><a href="/playground/xsl/">xsl</a></li><li><a href="/playground/backgrounds/">backgrounds</a></li><li class="last-child"><a href="/playground/flash/">flash</a></li></ul>
+      </li>
+		<li ><a href="/rant/" accesskey="R">Rant</a>		
+</ul>
+
+
+
+<p>The <a href="/playground/cssplay/drop-down-llama-menu-ii/">Drop Down Llama Menu II full description</a> can be found in the corresponding  post.</p>
+
+<p><a href="http://www.moronicbajebus.com/site/copyright/">© Seamus P. H. Leahy</a>
+ <br>You may take and improve upon this.
+ <br>Updated: 2006.9.24
+ </p>
+
+
+ 
+
+</body>
+</html>

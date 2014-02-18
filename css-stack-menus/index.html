@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mojebus&rsquo; CSS Stack Menus By Seamus P. H. Leahy</title>
+	
+	<style>
+		body {
+			font-family: "Lucida Grande", Arial, sans-serif;	
+		}
+		
+		/* The container for the whole thing */
+		#trigger {
+			position: fixed;
+			bottom: 10px;
+			left: 10%;
+			
+			width: 100px;
+			height: 100px;
+		}
+		
+		/* The box that says "Trigger", this hides the popup items */
+		#trigger .trigger-button {
+			display: block;
+			width: 100px;
+			height: 100px;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			-o-border-radius: 5px;
+			border-radius: 5px;
+			
+			position: absolute;
+			z-index: 5; /* Move the trigger over the stack items to hide the items */
+			
+			background-color: rgba(0,0,0,.8); /* See through for the example */
+			color: white;
+			-webkit-box-shadow: 0 0 3px rgba(50,50,50,.8);
+			-moz-box-shadow: 0 0 3px rgba(50,50,50,.8);
+			-o-box-shadow: 0 0 3px rgba(50,50,50,.8);
+			box-shadow: 0 0 3px rgba(50,50,50,.8);
+			-moz-box-shadow: 0 0 3px rgba(50,50,50,.8);
+			-o-box-shadow: 0 0 3px rgba(50,50,50,.8);
+			box-shadow: 0 0 3px rgba(50,50,50,.8);
+			
+			text-align: center;
+			line-height: 100px;
+			font-size: 20px;
+			text-shadow: 0 0 3px #999;
+			
+			cursor: default;
+		}
+		
+		#trigger ul {			
+			position: absolute;
+			bottom: 50px;
+			
+			padding: 0;
+			margin: 0;
+		}
+		
+		
+		/* The stack items */
+		#trigger ul li {
+			/* clear the default styles */
+			margin: 0;
+			display: block;
+			
+			opacity: 0.2; /* Would be 0, 0.2 for the example */
+			
+			/* place the items below the trigger-button */
+			position: absolute;
+			bottom: -60px;
+			
+			/* The size of the items plus padding to allow for the cursor to move from item
+			   to item without closing the stack */
+			padding: 10px;
+			width: 80px;
+			height: 80px;
+			
+			/* Setup the animation effect */
+			-webkit-transition: -webkit-transform .5s ease-out, opacity .4s ease-out, bottom .5s ease-out;
+			-moz-transition: -moz-transform .5s ease-out, opacity .4s ease-out, bottom .5s ease-out;
+			-o-transition: -o-transform .5s ease-out, opacity .4s ease-out, bottom .5s ease-out;
+			transition: transform .5s ease-out, opacity .4s ease-out, bottom .5s ease-out;
+			
+			/* Move the origin far to the right to be the axis to rotate around*/
+			-webkit-transform-origin: 600px 50px;
+			-moz-transform-origin: 600px 50px;
+			-o-transform-origin: 600px 50px;
+			
+			
+			
+			/* border for the example to see the boundery */
+			border: dashed 1px red;
+			
+		}
+		
+		/* Move the stack items up to unhide behind the trigger-button */
+		#trigger:hover ul li {
+			bottom: -50px;
+		}
+		
+		/* Position the stack items for when open by rotating them upwards */
+		#trigger:hover ul li:nth-child(1) {
+			-webkit-transform: rotate(10deg);
+			-moz-transform: rotate(10deg);
+			-o-transform: rotate(10deg);
+			transform: rotate(10deg);
+			opacity: .9;
+		}
+		#trigger:hover ul li:nth-child(2) {
+			-webkit-transform: rotate(20deg);
+			-moz-transform: rotate(20deg);
+			-o-transform: rotate(20deg);
+			transform: rotate(20deg);
+			opacity: .8;
+		}
+		#trigger:hover ul li:nth-child(3) {
+			-webkit-transform: rotate(30deg);
+			-moz-transform: rotate(30deg);
+			-o-transform: rotate(30deg);
+			transform: rotate(30deg);
+			opacity: .7;
+		}
+		#trigger:hover ul li:nth-child(4) {
+			-webkit-transform: rotate(40deg);
+			-moz-transform: rotate(40deg);
+			-o-transform: rotate(40deg);
+			transform: rotate(40deg);
+			opacity: .6;
+		}
+		#trigger:hover ul li:nth-child(5) {
+			-webkit-transform: rotate(50deg);
+			-moz-transform: rotate(50deg);
+			-o-transform: rotate(50deg);
+			transform: rotate(50deg);
+			opacity: .5;
+		}
+		
+		/* Hide any items after the fifth */
+		#trigger ul li:nth-child(5) ~ li {
+			display: none;
+		}
+		
+		/* Full opacity for hovering over the stack items */
+		#trigger:hover ul li:hover {
+			opacity: 1;
+		}
+		
+		
+		/* The button/icons for the stack items */
+		#trigger ul a {
+		  display: block;
+		  
+		  background-color: yellow;
+		  border: solid 2px white;
+		  background-image: -webkit-gradient(
+				linear,
+				left top,
+				left bottom,
+				color-stop(0, rgba(100%,100%,100%,.2)),
+				color-stop(1, rgba(100%,100%,100%,0))
+			);
+		  
+		  	line-height: 76px;
+		  	-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			-o-border-radius: 5px;
+			border-radius: 5px;
+		  
+		  text-align: center;
+		  text-shadow: none;
+		  text-decoration: none;
+		  font-size: 30px;
+		  color: #111;
+		  
+			-webkit-transition: background-color .4s;
+			-moz-transition: background-color .4s;
+			-o-transition: background-color .4s;
+			transition: background-color .4s;
+			
+			-webkit-box-shadow: 0 0 3px rgba(0,0,0,.5);
+			-moz-box-shadow: 0 0 3px rgba(0,0,0,.5);
+			-o-box-shadow: 0 0 3px rgba(0,0,0,.5);
+			box-shadow: 0 0 3px rgba(0,0,0,.5);
+		}
+		
+		#trigger ul li:nth-child(odd) a{
+			background-color: teal;
+		}
+		
+		#trigger ul li:nth-child(n) a:hover {
+			background-color: green;
+		}
+		
+		
+		/* The next is to create the axis marker for the example */
+		#trigger ul {
+			counter-reset: axis;
+		}
+		#trigger ul li:after {
+			display: block;
+			position: absolute;
+			left: 573px;
+			top: 23px;
+			width: 50px;
+			height: 50px;
+			border: dashed green 1px;
+			counter-increment: axis;
+			content: "axis " counter( axis );
+			padding: 2px;
+			border: dashed 2px green;
+			text-align: center;
+			line-height: 50px;
+			color: rgba(0,0,0,.5);
+			opacity: .5;
+			
+		}
+		#trigger ul li:hover:after {
+			z-index: 5;
+			color: black;
+			opacity: 1;
+			border-color: red;
+			-webkit-box-shadow: 0 0 5px yellow;
+			-moz-box-shadow: 0 0 5px yellow;
+			-o-box-shadow: 0 0 5px yellow;
+			box-shadow: 0 0 5px yellow;
+		}
+		
+		/* Other styles for the page */
+		#about {
+			width: 400px;
+			float: right;
+			margin: 50px;
+			color: #666;
+		}
+		
+		#about h1 {
+			font-weight: normal;
+			font-size: 300%;
+			
+		}
+		
+		#about h1 small {
+			font-size: 50%;
+			display: block;
+		}
+		
+		#about a {
+			text-decoration: none;
+			background-color: #4e92ec;
+			color: white;
+			padding: 5px;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="about">
+		<h1><small>Mojebus&rsquo;</small> CSS Stack Menus <small>By Seamus P. H. Leahy</small></h1>
+		<p><a href="../" class="learn-more">Learn more</a>  2010 Feb 20</p>
+	</div>
+
+	<div id="trigger">
+		<span class="trigger-button">Trigger</span>
+		<ul>
+			<li><a href="#">A</a></li>
+			<li><a href="#">B</a></li>
+			<li><a href="#">C</a></li>
+			<li><a href="#">D</a></li>
+			<li><a href="#">E</a></li>
+			<li><a href="#">F</a></li>
+		</ul>
+	</div>
+</body>
+</html>

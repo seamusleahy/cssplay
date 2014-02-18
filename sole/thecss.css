@@ -1,0 +1,25 @@
+body{ margin: 0;  padding: 0;  background-color: #0C2236;  color: White;  background-image: url(bodybg.png);  background-position: top;  background-repeat: repeat-x;  background-attachment: fixed;        }
+body #header{ font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;  font-size: 20px;  font-weight: normal;  text-transform: lowercase;  margin-left: auto;  margin-right: auto;  width: 796px;  background-image: url(topbg.jpg);  height: 26px;  padding: 2px;  border-color: #6CADD8;  border-style: solid;  border-width: 2px;             }
+body #mid{margin-left: auto;  margin-right: auto;  width: 790px; padding: 5px; height: 290px; 	background-image: url(midbg.jpg);  font-family: Arial, Helvetica, sans-serif;  font-size: 1em;  color: #040D16;  border-color: #6CADD8;  border-style: solid;  border-width: 0 2px 2px 2px;  overflow: auto;  background-attachment: fixed;  background-repeat: no-repeat;  background-position: 50% 34px;  font-weight: normal;  line-height: 150%;                         }
+body #mid h2 + *{
+	margin-top: 0;
+}
+body #mid h2{
+	margin-bottom: 0;
+	background-image: url(midbgheader.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: 50% 34px;
+	text-transform: lowercase;
+	font-size: 100%;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0 1% 0 1%;
+	color: #2B002C;
+	border-color: #5D0060;
+	border-style: solid;
+	border-width: 1px;
+}
+body #mid p{
+	margin-left: 1%;
+}

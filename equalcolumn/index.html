@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>CSS Layout with Columns of Equal Length</title>
+	<link rel="stylesheet" media="all" href="equalcolumn.css" />
+</head>
+
+<body>
+<h1>CSS Layout with Columns of Equal Length</h1>
+<div id="main">
+<div id="right">
+<h2>#right</h2>
+<ul id="nav">
+<li><a href="/">Launch</a></li>
+<li><a href="/about/">About</a></li>
+<li><a href="/playground/">Playground</a></li>
+<li><a href="/rantsandlike/">Rants &amp; Like</a></li>
+
+</ul>
+</div>
+<div id="center">
+<h2>#center</h2>
+<p>The problem with making a switch from table based layouts to Cascading Stylesheets Layout is 
+wanting to make a design with multiple column and the column are all of the same length. 
+I finally achieved the same effect of three columns that are really the same length by using 
+<code>display: table-cell</code>.
+ </p>
+ 
+ <p>From my test, it works with Mozilla 1.4 and Opera 7; it does not work with Internet Explorer 6.</p>
+ 
+ <p>Further<a href="http://archivist.incutio.com/viewlist/css-discuss/27817"> discussion</a> on
+   this example can be found with <a href="http://www.css-discuss.org/">CSS-Discuss</a>.</p>
+ 
+ <p><a href="http://www.moronicbajebus.com/">&copy; 2003 Seamus P. H. Leahy</a>
+ <br/>You may take and improve upon this.
+ </p>
+
+</div>
+
+<div id="left">
+<h2>#left</h2>
+<h3>The HTML</h3>
+<p class="code">&lt;div id="main"&gt;
+   &lt;div id="right"&gt;right&lt;/div&gt;
+   &lt;div id="center"&gt;center&lt;/div&gt;
+   &lt;div id="right"&gt;right&lt;/div&gt;
+&lt;/div&gt;
+</p>
+
+<h3>The CSS</h3>
+<p class="code">body #main{
+   display: table;
+}
+
+body #main > *{
+   display: table-cell;
+}</p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+/* File: ver4.css
+	Created By: Seamus P. H. Leahy
+	http://mywebpages.comcast.net/moronicbajebus/
+ */
+ /*Fluid, Fluid*/
+body #holder{
+	background-image : url(bg3.png);
+	background-position : 50% 0;
+	background-repeat : repeat-y;
+	float : left;
+	width: 100%;
+}
+
+body #holder #sidebar{
+	float : left;
+	width: 40%;
+	padding: 0 3% 0 7%;
+	
+}
+
+body #holder #content{
+	float : left;
+	width: 40%;
+	padding: 0 3% 0 7%;
+	margin: 0;
+
+
+}

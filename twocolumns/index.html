@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Two &#8220;Continues&#8221; Columns</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="twocol.css" title="Static, Fluid" />
+
+<link rel="alternate stylesheet" type="text/css" href="twocol.css" title="Static, Static" />
+<link rel="alternate stylesheet" type="text/css" href="ver2.css" title="Static, Static" />
+
+<link rel="alternate stylesheet" type="text/css" href="twocol.css" title="Fluid, Static" />
+<link rel="alternate stylesheet" type="text/css" href="ver3.css" title="Fluid, Static" />
+
+<link rel="alternate stylesheet" type="text/css" href="twocol.css" title="Fluid, Fluid" />
+<link rel="alternate stylesheet" type="text/css" href="ver4.css" title="Fluid, Fluid" />
+
+</head>
+
+<body>
+<div id="header">
+<div class="site"><a href="../../">Sea Mus n Squirrel &raquo; CSS Play</a></div>
+<h1>Two &#8220;Continues&#8221; Columns</h1></div>
+<div id="holder">
+	<div id="sidebar">
+	  <p>Sidebar</p>
+	  <p>&#8220;With malice toward none, with charity for all, with firmness in the right as 
+	 God gives us to see the right, let us strive on to finish the work we are in; to bind 
+	 up the nation's wounds; to care for him who shall have borne the battle, and for his widow 
+	 and his orphan - to do all which may achieve and cherish a just and lasting peace, among ourselves, 
+	 and with all nations.&#8221; Lincoln's Second Inaugural Address, March 4, 1865.
+	</p>
+	<p>
+	&#8220;The dogmas of the quiet past are inadequate to the stormy present. 
+	The occasion is piled high with difficulty, and we must rise with the occasion. 
+	As our case is new, so we must think anew, and act anew. We must disenthrall ourselves,
+	 and then we shall save our country.&#8221; Lincoln's Second Annual Message to Congress, December 1, 1862.
+	</p>
+	
+	</div>
+  <div id="content"> 
+	  <h2>So what is going on?</h2>
+		<p>This is an example of a two column layout using CSS that makes the two columns
+		  look like they are the same length even though they are not. The two
+		  divs (sidebar and content) that are the columns are both in another
+		  div (holder) that has a background
+		  image that gives the illusion.</p>
+		<h3>HTML</h3>
+    <code class="block"> 
+			&lt;div id="holder"&gt;<br />
+			&nbsp;&nbsp;&nbsp;&lt;div id="sidebar"&gt;<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Side Bar&hellip;<br />
+				
+			&nbsp;&nbsp;&nbsp;&hellip;&lt;/div&gt;<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="content"&gt;<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Content&hellip;<br />
+				
+    &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+		  &lt;/div&gt;
+      </code>
+	 	
+		<h3>CSS&#8212;Static, Fluid</h3>
+	  <code class="block">
+		body #holder{<br />
+
+	&nbsp;&nbsp;&nbsp;background-image : url(<a href="bg.png">bg.png</a>);<br />
+	&nbsp;&nbsp;&nbsp;background-position : left;<br />
+	&nbsp;&nbsp;&nbsp;background-repeat : repeat-y;<br />
+	&nbsp;&nbsp;&nbsp;float : left;<br />
+}<br /><br />
+
+body #holder #sidebar{<br />
+	&nbsp;&nbsp;&nbsp;float : left;<br />
+	&nbsp;&nbsp;&nbsp;width : 190px;<br />
+	&nbsp;&nbsp;&nbsp;padding : 5px;<br />
+}<br /><br />
+
+body #holder #content{<br />
+	&nbsp;&nbsp;&nbsp;margin-left: 200px;<br />
+	&nbsp;&nbsp;&nbsp;padding: 0 10% 0 5%;<br />
+}
+		
+	  </code>
+	 <p>You can also view this example with a both columns static, both columns
+	   fluid, and also with a left fluid column and a right static by switching
+	   to the alternate
+	   stylesheet
+	 &#8220;Static, Static,&#8221;&#8220;Fluid, Fluid,&#8221; or &#8220;Fluid, Static&#8221; </p>
+	 <ul>
+	 	<li>In Mozilla, go to View > Use Style > Static, Static.</li>
+		<li>In Opera, go to View > Style > Static, Static.</li>
+		<li>For Phoenix users you will need 
+		<a href="http://texturizer.net/phoenix/extensions.html#Alternate%20Stylesheet%20Switcher">Alternate Stylesheet Switcher Extension</a>
+		to do the same thing as Mozilla.</li>
+	 </ul>
+ <hr />
+ 
+ 
+	 <h3>CSS&#8212;Static, Static</h3>
+	 	  <code class="block">
+		  body #holder{<br />
+&nbsp;&nbsp;&nbsp;background-image : url(<a href="bg.png">bg.png</a>);<br />
+&nbsp;&nbsp;&nbsp;background-position : left;<br />
+&nbsp;&nbsp;&nbsp;background-repeat : repeat-y;<br />
+&nbsp;&nbsp;&nbsp;float : left;<br />
+&nbsp;&nbsp;&nbsp;width: 650px;<br />
+      }<br />
+      <br />
+      body #holder #sidebar{<br />
+&nbsp;&nbsp;&nbsp;float : left;<br />
+&nbsp;&nbsp;&nbsp;width : 190px;<br />
+&nbsp;&nbsp;&nbsp;padding : 5px;<br />
+  }<br />
+    <br />
+    body #holder #content{<br />
+&nbsp;&nbsp;&nbsp;margin-left: 200px;<br />
+&nbsp;&nbsp;&nbsp;padding: 0 10% 0 5%;<br />
+  } </code> 
+  
+  
+  
+  	 <h3>CSS&#8212;Fluid, Static</h3>
+	 	  <code class="block">
+		  body #holder{<br />
+&nbsp;&nbsp;&nbsp;background-image : url(<a href="bg2.png">bg2.png</a>);<br />
+&nbsp;&nbsp;&nbsp;background-position : left;<br />
+&nbsp;&nbsp;&nbsp;background-repeat : repeat-y;<br />
+&nbsp;&nbsp;&nbsp;float : left;<br />
+&nbsp;&nbsp;&nbsp;width: 100%<br />
+      }<br />
+      <br />
+      body #holder #sidebar{<br />
+&nbsp;&nbsp;&nbsp;float : right;<br />
+&nbsp;&nbsp;&nbsp;width : 190px;<br />
+&nbsp;&nbsp;&nbsp;padding : 5px;<br />
+  }<br />
+    <br />
+    body #holder #content{<br />
+&nbsp;&nbsp;&nbsp;margin: 0 250px 0 auto;<br />
+&nbsp;&nbsp;&nbsp;padding: 0 5% 0 10%;<br />
+  } </code> 
+  
+  
+    <h3>CSS&#8212;Fluid, Fluid</h3>
+	 	  <code class="block">
+		  body #holder{<br />
+&nbsp;&nbsp;&nbsp;background-image : url(<a href="bg3.png">bg3.png</a>);<br />
+&nbsp;&nbsp;&nbsp;background-position : 50% 0;<br />
+&nbsp;&nbsp;&nbsp;background-repeat : repeat-y;<br />
+&nbsp;&nbsp;&nbsp;float : left;<br />
+&nbsp;&nbsp;&nbsp;width: 100%<br />
+      }<br />
+      <br />
+      body #holder #sidebar{<br />
+&nbsp;&nbsp;&nbsp;float : right;<br />
+&nbsp;&nbsp;&nbsp;width : 40%;<br />
+&nbsp;&nbsp;&nbsp;padding: 0 3% 0 7%;<br />
+  }<br />
+    <br />
+    body #holder #content{<br />
+&nbsp;&nbsp;&nbsp;width : 40%;<br />
+&nbsp;&nbsp;&nbsp;padding: 0 3% 0 7%;<br />
+  } </code>
+    </div>
+
+
+</div>
+<p><a href="http://www.moronicbajebus.com/">&copy; 2003 Seamus P. H. Leahy</a>
+ <br/>You may take and improve upon this.
+ </p>
+</body>
+</html>

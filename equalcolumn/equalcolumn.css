@@ -1,0 +1,99 @@
+
+/* Just making it look pretty here*/
+body{
+	font-family : Georgia, "Times New Roman", Times, " serif";
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+}
+body h1{
+	font-size: 2em;
+	font-weight: normal;
+	color: #003399;
+	border-style: solid;
+	border-width: 3px;
+	height: .95em;
+	overflow: hidden;
+	margin: 0;
+	background-color: #B0D5FF;
+}
+body h2{
+	font-size: 1.2em;
+	font-weight: normal;
+	height: 1em;
+	overflow: hidden;
+	margin: 0;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+}
+body h3{
+	font-size: 1em;
+	margin-bottom: 0;
+}
+body h3 + *{
+	margin-top: 0;
+}
+p.code{
+	white-space: pre;
+	font-family: "Courier New", Courier, monospace;
+	font-size: .9em;
+	border-width: 1px;
+	border-style: dotted;
+	padding: .1em
+}
+
+body #nav{
+	margin: 0;
+	padding: 0;
+}
+body #nav li{
+	list-style: none;
+}
+body #nav li + li{
+	border-top-style: solid;
+	border-top-width: 1px;
+}
+body #nav li a{
+	text-decoration: none;
+	color: inherit;
+	font-size: 90%;
+	text-transform: lowercase;
+	display: block;
+}
+body #nav li a:hover{ 
+
+	color: #00046A;
+	background-color: #ECECFF;
+ }
+
+
+/* The column effect */
+body #main > *{
+	display: table-cell;
+	padding: 1em;
+	border-style: solid;
+	border-width: 3px;
+}
+
+body #main{
+	display: table; 	/* Needed so Opera will get rid of the spacing in between columns*/
+}
+body #main #right{
+	background-color: #FFECFF;
+	width: 10%;
+	color: #67006A;
+
+	
+}
+body #main #left{
+	background-color: #FAFFE5;
+	width: 35%;
+	color: #4E5900;
+	border-color: #1F2400;
+}
+
+body #main #center{
+	width: 55%;
+	background-color: #DDDFFF;
+	color: #000171;
+}

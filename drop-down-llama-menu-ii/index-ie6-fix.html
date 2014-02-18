@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Drop Down Llama Menu &laquo; CSS Play &laquo; Sea Mus N Squirrel</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style>
+/* Make it pretty */
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #fefefe;
+	color: #111;
+	
+}
+
+body h1{
+	text-indent: -900px;
+	height: 57px;
+	width: 164px;
+	margin: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	left: 0;
+	
+	background-image: url("graphics/llama.png");
+}
+
+body > p{
+	margin-left: 100px;
+	width: 700px;
+	line-height: 170%;
+	font-size: .9em;
+}
+body > h2{
+	margin-left: 100px;
+	width: 700px;
+	line-height: 100%;
+	font-size: 1.2em;
+	margin-bottom: 0;
+}
+
+body > h2 + *{
+	margin-top: 0;
+}
+
+/* the menu code*/
+	#navigation{
+
+		margin: 0 0 30px 0 ;
+		padding: 0 2px 0 164px; /* added top and bottom to 0*/
+		height: 32px; /* added 32px */
+		
+		position: relative; /* added */
+		
+		background-color: #FEE4F6;
+		
+		background-image: url("graphics/navbg.png");
+		background-repeat: repeat-x;
+		background-position: bottom;
+		border-color: #E3099E;
+		border-width: 1px 0 1px 0;
+		border-style: solid;
+		text-transform: lowercase;
+		line-height: 100%;
+		width: auto;
+	
+	}
+	
+	#navigation > li{
+		float: left;
+		width: 130px;
+		height: 32px; /* added 32px */
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		position: relative;
+	}
+	
+	#navigation > li > a{
+		display: block;
+		width: 99px;
+		height: 15px;
+		padding: 7px 24px 8px 7px; /* added 7px for top*/
+		
+		background-image: url("graphics/buttonbg.gif");
+		font-size: 13px;
+		line-height: normal; /* added */
+		color: #FA69CC;
+		text-decoration: none;
+		font-family: Arial;
+	
+	}
+	#navigation > li:hover > a{
+	background-image: url("graphics/buttonbghover.gif");
+	color: #E3099E;		
+	
+	}
+	
+	ul#navigation > li > ul{
+	
+	/*
+	I would have prefered to position at as the following:
+		position: absolute;
+		right: 5px;
+		top: 4px;
+		
+	That takes advantage of the container box rules; 
+	but that does not work to well in the browsers.
+	
+	*/
+	/* added */
+		position: absolute;
+		right: 5px;
+		top: 6px;
+		width: 17px;
+		height: 20px;
+		/* end added */
+		
+		/*float: right;
+		width: 17px;
+		height: 20px;
+		
+		
+		margin-top: -24px;
+		margin-right: 5px;
+		
+		*/
+		
+		padding: 0;
+		
+		background-image: url("graphics/dropdown.gif");
+		background-position: 100% 0;
+		background-repeat: no-repeat;
+		z-index: 50;
+		
+		/*overflow: hidden;*/
+	
+	}
+	
+	ul#navigation > li:hover > ul{
+		background-image: url("graphics/dropdownglow.gif");
+	}
+	ul#navigation > li > ul:hover{
+		
+	background-image: url("graphics/dropdownhover.gif");
+	
+	width: 117px; /* added */
+	
+	/*overflow: visible;*/
+	
+	}
+	
+	
+	ul#navigation li ul  li{
+	/*position: absolute;
+	margin-left: -9000px;	*/
+	
+	display: none;
+	} 
+	
+	ul#navigation  > li > ul:hover > li{
+		display: block;
+		width: 117px;
+		margin: 0 0 -1px 0; /* added -3px for bottom and 0 for left*/
+		padding: 0;
+		position: relative;
+		/*left: -99px; /* added */
+		z-index: 500;
+		
+		/*added*/
+		
+		
+		
+	}
+	
+	ul#navigation > li > ul:hover > li:first-child{
+		margin-top: 18px;
+		padding-top:3px;
+		
+		background-image: url("graphics/topsubmenu.png");
+		background-repeat: no-repeat;
+		background-position: 100% 0;
+		
+	}
+	ul#navigation > li > ul:hover > li.last-child{
+
+		padding-bottom:3px;
+		
+		background-image: url("graphics/bottomsubmenu.gif");
+		background-repeat: no-repeat;
+		background-position: 0 100%;
+		
+	}
+	ul#navigation > li > ul > li.last-child:hover{
+	background-image: url("graphics/bottomsubmenuhover.gif");
+	}
+	
+	ul#navigation   li   ul  li  a{
+		display: block;	
+		background-color: #FFF5FC;
+		border-color: #E3099E;
+		border-width: 0 1px 0 1px;
+		border-style: solid;
+		/*padding: 1px 4px 1px 4px;*/
+		padding: 3px 4px 3px 4px; /* added */
+		
+		margin: 0;
+		font-family: Arial;
+		text-decoration: none;
+		
+		font-size: 12px;
+		background-image: url("graphics/submenubutton.png");
+		color: #E3099E;
+	}
+	ul#navigation  > li > ul > li > a:hover ,
+	ul#navigation  > li > ul > li:hover > a{
+		background-image: url("graphics/submenubuttonhover.png");
+	}
+
+
+	code.pre {
+		white-space: pre;
+		background-color: #f8f8f8;
+		display: block;
+		line-height: 140%;
+	}
+
+
+
+</style>
+
+<!-- compliance patch for microsoft browsers -->
+<!--[if lt IE 7]>
+<script src="ie7/ie7-standard-p.js" type="text/javascript">
+</script>
+<![endif]-->
+
+
+</head>
+
+<body>
+<h1>Drop Down Llama Menu</h1>
+<ul id="navigation">
+	<li ><a href="/" accesskey="L">Launch</a></li>
+		<li ><a href="/about/" accesskey="A">About</a>
+		
+		<!-- added no spaces in between tags-->
+			<ul><li><a href="/about/index.php#seamus">Seamus</a></li><li><a href="http://portfolio.moronicbajebus.com/" accesskey="F">Portfolio</a></li><li class="last-child"><a href="/about/resume/" accesskey="N">Resume</a></li></ul>
+			
+		
+		</li>
+		<li ><a href="/playground/" accesskey="P">playground</a>
+
+			<ul><li><a href="/playground/cssplay/" >Cssplay</a></li><li><a href="/playground/xsl/">xsl</a></li><li><a href="/playground/backgrounds/">backgrounds</a></li><li class="last-child"><a href="/playground/flash/">flash</a></li></ul>
+
+		</li>
+		
+		<li ><a href="/rant/" accesskey="R">Rant</a>			
+		
+	
+
+</ul>
+
+<p>The <a href="/playground/cssplay/drop-down-llama-menu-ii/">Drop Down Llama Menu II full description</a> can be found in the corresponding  post.</p>
+
+<p><a href="http://www.moronicbajebus.com/site/copyright/">© Seamus P. H. Leahy</a>
+ <br>You may take and improve upon this.
+ <br>Updated: 2006.9.24
+ </p>
+
+
+ 
+
+</body>
+</html>

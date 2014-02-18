@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Drop Down Llama Menu &laquo; CSS Play &laquo; Sea Mus N Squirrel</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style>
+/* Make it pretty */
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #fefefe;
+	color: #111;
+	
+}
+
+body h1{
+	text-indent: -900px;
+	height: 57px;
+	width: 164px;
+	margin: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	left: 0;
+	
+	background-image: url("graphics/llama.png");
+}
+
+body > p{
+	margin-left: 100px;
+	width: 700px;
+	line-height: 170%;
+	font-size: .9em;
+}
+body > h2{
+	margin-left: 100px;
+	width: 700px;
+	line-height: 100%;
+	font-size: 1.2em;
+	margin-bottom: 0;
+}
+
+body > h2 + *{
+	margin-top: 0;
+}
+
+/**/
+	#nav{
+		/*float: left;*/
+		/*width: 100%;*/
+		margin: 0 0 30px 0 ;
+		padding: 2px 2px 2px 164px;
+		height: 28px;
+		
+		background-color: #FEE4F6;
+		
+		background-image: url("graphics/navbg.png");
+		background-repeat: repeat-x;
+		background-position: bottom;
+		border-color: #E3099E;
+		border-width: 1px 0 1px 0;
+		border-style: solid;
+		text-transform: lowercase;
+		line-height: 100%;
+		width: auto;
+	
+	}
+	
+	#nav > li{
+		float: left;
+		width: 130px;
+		height: 28px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		position: relative;
+	}
+	
+	#nav > li > a{
+		display: block;
+		width: 99px;
+		height: 15px;
+		padding: 5px 24px 8px 7px;
+		
+		background-image: url("graphics/buttonbg.png");
+		font-size: 13px;
+		color: #FA69CC;
+		text-decoration: none;
+		font-family: Arial;
+	
+	}
+	#nav > li:hover > a{
+	background-image: url("graphics/buttonbghover.png");
+	color: #E3099E;		
+	
+	}
+	
+	ul#nav > li > ul{
+	
+	/*
+	I would have prefered to position at as the following:
+		position: absolute;
+		right: 5px;
+		top: 4px;
+		
+	That takes advantage of the container box rules; 
+	but that does not work to well in the browsers.
+	
+	*/
+		
+		float: right;
+		width: 17px;
+		height: 20px;
+		
+		
+		margin-top: -24px;
+		margin-right: 5px;
+		
+		
+		
+		padding: 0;
+		
+		background-image: url("graphics/dropdown.png");
+		z-index: 50;
+		
+		overflow: hidden;
+	
+	}
+	ul#nav > li > ul:hover{
+		
+	background-image: url("graphics/dropdownhover.png");
+	overflow: visible;
+	
+	}
+	
+	
+	ul#nav li ul  li{
+	position: absolute;
+	margin-left: -9000px;	
+	} 
+	ul#nav  > li > ul:hover > li{
+		display: block;
+		width: 117px;
+		margin: 0 0 0 -99px;
+		padding: 0;
+		position: relative;
+		z-index: 500;
+		
+	}
+	
+	ul#nav > li > ul:hover > li:first-child{
+		margin-top: 18px;
+		padding-top:3px;
+		
+		background-image: url("graphics/topsubmenu.png");
+		background-repeat: no-repeat;
+		background-position: 100% 0;
+		
+	}
+		ul#nav > li > ul:hover > li:last-child{
+
+		padding-bottom:3px;
+		
+		background-image: url("graphics/bottomsubmenu.png");
+		background-repeat: no-repeat;
+		background-position: 0 100%;
+		
+	}
+	ul#nav > li > ul:hover > li:last-child:hover{
+	background-image: url("graphics/bottomsubmenuhover.png");
+	}
+	
+	ul#nav  > li > ul:hover > li > a{
+		display: block;
+		background-color: #FFF5FC;
+		border-color: #E3099E;
+		border-width: 0 1px 0 1px;
+		border-style: solid;
+		padding: 1px 4px 1px 4px;
+		margin: 0;
+		font-family: Arial;
+		text-decoration: none;
+		font-size: 12px;
+		background-image: url("graphics/submenubutton.png");
+		color: #E3099E;
+	}
+	ul#nav  > li > ul:hover > li > a:hover,
+	ul#nav  > li > ul:hover > li:hover > a{
+		background-image: url("graphics/submenubuttonhover.png");
+	}
+
+	code.pre {
+		white-space: pre;
+		background-color: #f8f8f8;
+		display: block;
+		line-height: 140%;
+	}
+
+
+
+</style>
+
+</head>
+
+<body>
+<h1>Drop Down Llama Menu</h1>
+<ul id="nav">
+	<li ><a href="/" accesskey="L">launch</a></li>
+		<li ><a href="/about/" accesskey="A">about</a>
+			<ul>
+				<li><a href="/about/index.php#squirrel">Squirrel?</a></li>
+				<li><a href="/about/index.php#seamus">Seamus</a></li>
+
+				<li><a href="/about/portfolio/" accesskey="F">Portfolio</a></li>
+				<li><a href="/about/contact/" accesskey="N">Contact</a></li>
+			
+			</ul>
+		
+		</li>
+		<li ><a href="/playground/" accesskey="P">play ground</a>
+
+			<ul>
+				<li><a href="/playground/cssplay/" accesskey="C">css play</a></li>
+				<li><a href="/playground/xsl/">xsl</a></li>
+				<li><a href="/playground/backgrounds/">backgrounds</a></li>
+				<li><a href="/playground/flash/">flash</a></li>
+			</ul>
+
+		</li>
+		<li ><a href="/rantsandlike/" accesskey="R">rants &amp; like</a></li>
+
+</ul>
+
+<p>Oh yet another pure CSS drop down menu. 
+But instead of the menu being triggered by placing your mouse of the menu label, it is trigger by moving your cursor over the down arrow on the right side of the menu label.</p>
+
+<h2>Drop-Down Marker</h2>
+<p>The drop-down marker is created from the nested list <code>&lt;ul&gt;</code> that makes up the pop-up-menu.
+ The marker <a href="graphics/dropdown.png">graphic</a> is the background image for the list.
+ Additional to the marker is some positioning to get it to the right and to set the width and height to match the graphic size.</p>
+
+<p><code class="pre">ul#nav > li > ul{
+/*I would have prefered to position at as the following:
+	position: absolute;
+	right: 5px;
+	top: 4px;
+		
+That takes advantage of the container box rules; 
+but that does not work to well in the browsers.
+*/
+	float: right;
+	width: 17px;
+	height: 20px;
+		
+	margin-top: -24px;
+	margin-right: 5px;
+		
+	padding: 0;
+	
+	background-image: url("graphics/dropdown.png");
+	z-index: 50;
+
+	overflow: hidden;
+}</code></p> 
+
+<h2>Menu Items</h2>
+<p>The menu items are hidden based on a <a href="http://www.pixy.cz/blogg/clanky/csshiermenu/">trick</a> from <a href="http://www.pixy.cz/index.html">pixy</a>.
+Instead of doing the obvious thing and not display (<code>display: none;</code>) the
+list items , I set the overflow for the <code>&lt;ul&gt;</code> to hidden
+and push the <code>&lt;li&gt;</code> off the screen. By doing this, it works
+around the bugs in some of the browsers. </p>
+<p><code class="pre">ul#nav li ul  li{
+	position: absolute;
+	margin-left: -9000px;	
+} 
+ul#nav  > li > ul:hover > li{
+	display: block;
+	width: 117px;
+	margin: 0 0 0 -99px;
+	padding: 0;
+	position: relative;
+	z-index: 500;
+}</code></p>
+
+
+<p>Return to <a href="../">CSS Play</a>.</p>
+
+<p><a href="http://www.moronicbajebus.com/">© 2003 Seamus P. H. Leahy</a>
+ <br>You may take and improve upon this.
+ <br>Original: 2003.10.18
+ </p>
+
+
+ 
+
+</body>
+</html>

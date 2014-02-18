@@ -1,0 +1,97 @@
+
+
+
+
+
+body #indirect,
+body #direct{
+	border-color : #999999;
+	margin : 0 1% .5em 1%;
+	padding : 1.5em .5em .1em .5%;
+	border-style : solid;
+	border-width : 1px;
+	display : block;
+	white-space : pre;
+	background-color : #FCFCFC;
+	position : relative;
+	height: 30px;
+	background-color : White;
+	white-space : normal;
+}
+
+
+
+body #indirect ul,
+body #direct ul{
+	margin: 0;
+	padding: 0;
+	white-space : nowrap;
+	z-index : 10;
+	position : relative;
+}
+
+body #indirect ul li,
+body #direct ul li{
+	display : inline;
+	float : left;
+	height : 18px;
+	border-color : #9CD2F4;
+	border-style : solid;
+	border-width : 1px 0 1px 0;
+}
+body #indirect ul li + li,
+body #direct ul li + li{
+	padding-left : 9px;
+	background-image : url(leftend.png);
+	background-position : 0 -1px;
+	background-repeat : no-repeat;
+}
+
+body #indirect ul li a,
+body #direct ul li a{
+	text-decoration : none;
+	font-weight : bolder;
+	padding-left : .5em;
+	padding-right : .5em;
+	font-size : 15px;
+	color : #29A1EE;
+}
+body #indirect ul li a:hover,
+body #direct ul li a:hover{
+	text-decoration : none;
+	font-weight : bolder;
+	padding-left : .5em;
+	padding-right : .5em;
+	font-size : 15px;
+	color : #660000;
+}
+
+
+body #indirect ul li.end,
+body #direct ul li.end{
+	height : 20px;
+	background-image : none;
+	padding : 0;
+	border-style : none;
+}
+body #indirect ul li.end + li,
+body #direct ul li.end + li,
+body #indirect ul li.end:hover + li,
+body #direct ul li.end:hover + li{
+	padding-left : 0;
+	background-image : none;
+
+}
+
+/* direct */
+body #direct ul li:hover +  li,
+body #direct ul li:hover +  li + li{
+	background-image : url(rightend.png);
+}
+/* indirect */
+body #indirect ul li:hover ~  li
+{
+	background-image : url(rightend.png);
+}
+
+	

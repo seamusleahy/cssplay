@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Enlarger Menu</title>
+	<link  media="screen" rel="stylesheet" href="../../../css/css-play-template.css" />
+	<link media="screen" rel="stylesheet" href="enlarger.css" />
+</head>
+
+<body>
+<h1>Enlarger Button Menu</h1>
+<p>Before I start I must tell that yes I know that this does not work in Internet Explorer&#151;<em>do not wet yourself from shock now.</em> </p>
+<p>Inspired from many things, I thought up an idea for a navigation menu that used icons that would increase in size when the user placed their cursor over it.</p>
+<h2>Overlapping the Other Elements</h2>
+<div id="menu1">
+	<ul>
+		<li><a href="/"><img src="triangle.png" alt="Triangle" /></a></li>
+		<li><a href="/about/"><img src="square.png" alt="Sqaure" /></a></li>
+		<li><a href="/playground/"><img src="penta.png" alt="Pentagram" /></a></li>
+		<li><a href="/rantsandlike/"><img src="circle.png" alt="Circle" /></a></li>
+	</ul>
+</div>
+<p>This is the first on I came up with. 
+When the icons grow larger they overlap the other elements.</p>
+<h3><acronym title="HyperText Markup Langauge">HTML</acronym></h3>
+<p class="code">&lt;div id="menu"&gt;
+   &lt;ul>
+      &lt;li&gt;
+         &lt;a href="/"&gt;&lt;img src="triangle.png" alt="Triangle" /&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+         &lt;a href="/about/"&gt;&lt;img src="square.png" alt="Sqaure" /&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+         &lt;a href="/playground/"&gt;&lt;img src="penta.png" alt="Pentagram" /&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+         &lt;a href="/rantsandlike/"&gt;&lt;img src="circle.png" alt="Circle" /&gt;&lt;/a&gt;
+      &lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+</p>
+<h3><acronym title="Cascading Style Sheets">CSS</acronym></h3>
+<p class="code">
+<span class="css-definition">body #menu</span>{
+	float: left;
+	width: 100%;
+}
+
+<span class="comment">/* Get rid of the spacing for the list*/</span>
+<span class="css-definition">body #menu ul</span>{
+	margin: 0;
+	padding: 0;
+}
+
+<span class="css-definition">body #menu ul li</span>{
+<span class="comment">/* I need to keep them as block elements so
+I got rid of the marker and made them float left.
+The width and height are so they keep their 
+spacing when the image increase in size.	 */</span>
+	list-style: none;
+	float: left;
+	width: 32px;
+	height: 32px;
+}
+
+<span class="css-definition">body #menu ul li a img</span>{
+	border-style: none;
+	width: 32px;
+	height: 32px;
+}
+
+<span class="css-definition">body #menu ul li a:hover img</span>{
+	width: 64px;
+	height: 64px;
+	position: relative;
+	left: -16px;
+	top: -16px;
+	z-index: 2;
+}
+</p>
+
+<h2>Pushing the Other Elements</h2>
+<div id="menu2">
+	<ul>
+		<li><a href="/"><img src="triangle.png" alt="Triangle" /></a></li>
+		<li><a href="/"><img src="square.png" alt="Triangle" /></a></li>
+		<li><a href="/"><img src="penta.png" alt="Triangle" /></a></li>
+		<li><a href="/"><img src="circle.png" alt="Triangle" /></a></li>
+	</ul>
+</div>
+<p>With the second one, the icons push the other icons when they grow larger.
+Part of this idea comes from the object bar on the Macintosh; but I cannot make things before the icon
+grow larger.</p>
+<h3><acronym title="Cascading Style Sheets">CSS</acronym></h3>
+<p class="code"><span class="comment">/* Everthing else in the code is same as before */</span>
+<span class="css-definition">body #menu ul li:hover</span>{
+	width: 64px;
+}
+</p>
+<h2>Version 2</h2>
+<div id="menu4">
+	<ul>
+		<li><a href="/"><img src="triangle.png" alt="Triangle" /></a></li>
+		<li><a href="/"><img src="square.png" alt="Triangle" /></a></li>
+		<li><a href="/"><img src="penta.png" alt="Triangle" /></a></li>
+		<li><a href="/"><img src="circle.png" alt="Triangle" /></a></li>
+	</ul>
+</div>
+
+
+<div id="menu3">
+	<ul>
+		<li><a href="/"><img src="triangle.png" alt="Triangle" /></a></li>
+		<li><a href="/"><img src="square.png" alt="Triangle" /></a></li>
+		<li><a href="/"><img src="penta.png" alt="Triangle" /></a></li>
+		<li><a href="/"><img src="circle.png" alt="Triangle" /></a></li>
+	</ul>
+</div>
+<p>Then I decided to make the icons even smaller at first and have them all become same size as in the prevoius examples. </p>
+<h3><acronym title="Cascading Style Sheets">CSS</acronym></h3>
+<p class="code"><span class="css-definition">body #menu</span>{
+   float: left;
+   width: 100%;
+   height: 16px;
+   position: relative;
+}
+
+  <span class="css-definition">body #menu:hover</span>{
+   z-index: 3;
+   top: -8px; <span class="comment">/* causes the menu to overlap when it grows
+   larger. */</span>}
+
+  <span class="css-definition">body #menu ul</span>{
+   margin: 0;
+   padding: 0;
+}
+
+  <span class="css-definition">body #menu ul li</span>{
+   list-style: none;
+   float: left;
+   width: 16px;
+   height: 16px;
+   padding: 0 8px 0 8px; 
+   <span class="comment">/* I decided to add extra padding so 
+   it was not so hard on the eyes. */</span>}
+
+  <span class="css-definition">body #menu:hover ul li</span>{
+   width: 32px;
+   height: 32px;
+   padding: 0; <span class="comment">/* Ged rid of padding*/</span>}
+
+   <span class="css-definition">body #menu ul li a img</span>{
+   border-style: none;
+   width: 16px;
+   height: 16px;
+}
+
+   <span class="css-definition">body #menu:hover ul li a img</span>{
+   border-style: none;
+   width: 32px;
+   height: 32px;
+
+}
+
+   <span class="css-definition">body #menu ul li a:hover img</span>{
+   width: 64px;
+   height: 64px;
+   position: relative;
+   z-index: 2;
+   top: -16px;
+}
+
+<span class="comment">/* For the last example only. */</span>
+<span class="css-definition">body #menu ul li:hover</span>{
+   width: 64px;
+}
+</p>
+
+<p>Return to <a href="../">CSS Play</a>.</p>
+
+<p><a href="http://www.moronicbajebus.com/">&copy; 2003 Seamus P. H. Leahy</a>
+ <br/>You may take and improve upon this.
+ </p>
+</body>
+</html>

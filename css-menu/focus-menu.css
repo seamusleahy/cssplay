@@ -1,0 +1,22 @@
+body{
+	font-size : 1em;
+}
+body ul#menu li{
+	z-index : 3;
+	position : relative;
+	-moz-user-select: none;
+}
+
+body ul#menu li ul{
+	display : none;
+}
+body ul#menu li:active:hover ul,
+body ul#menu li:active ul:hover,
+body ul#menu li ul:hover{
+	display : block;
+	z-index : 2;
+	position : relative;
+	padding : 0 0 0 0;
+	margin :0 0 0 0;
+	background-color : Aqua;
+}

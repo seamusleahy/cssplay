@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Image Replacement&mdash;No Span</title>
+	<link  media="screen" rel="stylesheet" href="../../../css/css-play-template.css" />
+	<link media="screen" rel="stylesheet" href="imgreplace.css" />
+</head>
+
+<body>
+<h1>Image Replacement&mdash;No Span</h1>
+<p>Many of us have used the <a href="http://www.stopdesign.com/articles/css/replace-text/">Background-Image to Replace Text</a> method
+for inserting an image that is only really important to the layout through CSS. 
+One of the downside of this method is the use of an extra span tag.
+ But alas, no more. To achieve it with no span simple set the overflow to hidden, the height to zero, the padding-top to the height of the image, and the background-image to the image you want to display you can get the same effect.
+</p>
+
+<h2>Example</h2>
+<h3 id="ex1">Example Text for the Image Replacement</h3>
+<h3>HTML</h3>
+<p class="code">&lt;h3 id="ex1"&gt;Example Text for the Image Replacement&lt;/h3&gt;</p>
+<h3>CSS</h3>
+<p class="code"><span class="css-definition">#ex1</span>{
+   /*The image*/
+   background-image: url(ex1.gif);
+   background-repeat: no-repeat;
+	
+   /*Hide the text*/
+   height: 0;
+   overflow: hidden;
+
+   /*Size of the image*/
+   padding-top: 133px;
+   width: 243px;
+	
+}</p>
+
+<p>This works great in Windows Internet Explorer 6, <a href="http://www.mozilla.org">Mozilla</a> 1.4+, and <a href="http://www.opera.com">Opera</a> 6+; 
+but in Windows Internet Explorer 5 nothing shows up. This can easily be solved, note of problem and solution courtesy of <a href="http://www.mezzoblue.com">Dave Shea</a>, by using <a href="http://www.tantek.com/CSS/Examples/boxmodelhack.html">Tantek's hack</a>. </p>
+<h3>The revised CSS</h3>
+<p class="code"><span class="css-definition">#ex1</span>{
+   /*Size of the image*/
+   padding-top: 133px;
+   width: 243px;
+	
+   /*The image*/
+   background-image: url(ex1.gif);
+   background-repeat: no-repeat;
+	
+   /*Hide the text*/
+   overflow: hidden;
+   /* WIN IE5 hack */
+   height: 133px;
+	
+   voice-family: "\"}\""; 
+   voice-family:inherit;
+   height: 0;
+}</p>
+
+<h2>More About Image Replacement</h2>
+
+<ul>
+	<li><a href="http://www.kryogenix.org/">Stuart Langridge</a> has also independently come up with
+	the <a href="http://www.kryogenix.org/code/browser/lir/">same method</a> around the same time as me.</li>
+	<li>
+	Dave Shea has written an <a href="http://www.digital-web.com/features/feature_2003-08.shtml">article</a> for <a href="http://www.digital-web.com/">Digital Web</a> about image Replacement.
+	</li>
+</ul>
+
+<p>Return to <a href="../">CSS Play</a>.</p>
+
+<p><a href="http://www.moronicbajebus.com/">&copy; 2003 Seamus P. H. Leahy</a>
+ <br/>You may take and improve upon this.
+</p>
+</body>
+</html>
